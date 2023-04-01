@@ -1,0 +1,241 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    top: 178px;
+}
+
+section {
+    position: relative;
+    left: 400px;
+    display: inline-block;
+    border-bottom: 4px #D9D9D9 solid;
+    width: 1400px;
+    height: 620px;
+    margin: 0;
+}
+
+footer {
+    position: relative;
+    top: 100px;
+    background-color: #2C2C3A;
+    width: 1920px;
+    height: 100px;
+}
+
+.footer-container {
+    position: relative;
+    left: 750px;
+    display: inline-block;
+    width: 400px;
+}
+
+footer li {
+    position: relative;
+    left: 110px;
+    display: inline-block;
+    padding: 18px 20px 10px 0;
+}
+
+footer p {
+    color: #49A37B;
+}
+
+header {
+    position: fixed;
+    background-color: #373867;
+    width: 1920px;
+    text-align:center;
+    height: 116px;
+    align-content: center;
+    z-index: 100;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 56px;
+    font-weight: 700;
+    width: 500px;
+    color: #2F3058;
+}
+
+h1 span {
+    color: #616280;
+}
+
+section p {
+    display: inline-block;
+    text-align: justify;
+    font-size: 18px;
+    width: 500px;
+}
+
+header img {
+    position: absolute;
+    z-index: 100;
+}
+
+label{
+    display: inline-block;
+}
+
+input {
+    display: inline-block;
+    width: 300px;
+}
+
+article {
+    display: inline-block;
+    width: 600px;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    background-color: #373867;
+    z-index: 100;
+    width: 270px;
+    height: 1080px;
+}
+
+aside li {
+    width: 190px;
+    padding: 14px 0 15px 0;
+    border-bottom: 2px solid #C4C4C4;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+aside li a, .aside-contact > a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+aside > ul {
+    position: relative;
+    top: 55px;
+    left: 20px;
+}
+
+aside p {
+    border-bottom: 2px solid #46A37C;
+    min-width: fit-content;
+    max-width: 45%;
+    padding: 35px 0px 5px 0px;
+    margin: 0px;
+    color: #46A37C;
+}
+
+/**************** HEADER *******************/
+
+.header-logo {
+    position: relative;
+    top: 25px;
+    right: 460px;
+    width: 300px;
+    height: 74px;
+} 
+
+/**************** ASIDE *******************/
+
+.aside-logo {
+    position: relative;
+    top: 35px;
+    left: 80px;
+}
+
+.aside-menu {
+    position: absolute;
+    top: 20px;
+    left: 280px;
+}
+
+.aside-contact {
+    border-bottom: 0px;
+}
+
+.aside-contact ul li {
+    padding: 25px 0 12px 0;
+    width: 225px;
+}
+
+.aside-contact > img {
+    position: relative;
+    bottom: 5px;
+    left: 40px;
+}
+
+.aside-contact {
+    color: #46A37C;
+}
+
+.aside-subtitle {
+    padding-left: 4px;
+    font-weight: bold;
+}
+
+/**************** TITLE *******************/
+
+.span-h1 {
+    color: #616280;
+}
+
+.span-h2 {
+    font-weight: bold;
+}
+
+.main-h2 {
+    margin: 0;
+    padding: 40px 0;
+    font-size: 25px;
+    font-weight: 600;
+    width: 600px;
+    color: #2F3058;
+}
+
+.main-h2 span {
+    font-weight: 700;
+}
+
+.text-container {
+    display: inline-block;
+    width: 500px;
+}
+
+.section-title p {
+    width: 400px;
+}
+
+.main-photo {
+    position: relative;
+    left: 80px;
+    display: inline-block;
+    border-radius: 22px;
+    width: 750px;
+    height: 525px;
+}
+
+/**************** MEET US *******************/
+
+
+
+/**************** GYM SECTION *******************/
+
+.section-gym {
+    height: 600px;
+}
