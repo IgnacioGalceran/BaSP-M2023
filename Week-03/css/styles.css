@@ -304,3 +304,98 @@ article:nth-child(4) {
     width: 1500px
 }
 
+/**************** CONTACT US SECTION *******************/
+
+.section-contactus {
+    height: 1050px;
+    width: 1300px;
+}
+
+.section-contactus h2 {
+    position: relative;
+    top: 70px;
+    right: 5px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.contactus-container {
+    position: relative;
+    top: 160px;
+    right: 5px;
+}
+
+label {
+    display: block;
+    padding-bottom: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #373867;
+}
+
+label[for="checkbox"] {
+    width: 420px;
+    position: relative;
+    left: 18px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.input-container {
+    width: 630px;
+    display: inline-block;
+    padding-bottom: 30px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 600px;
+    height: 37px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    border-radius: 4px;
+    bottom: 33px;
+    width: 13px;
+    margin: 0;
+}
+
+textarea {
+    width: 1230px;
+    height: 180px;
+    border: 1px solid #373867;
+}
+
+.contactus-buttons {
+    position: relative;
+    float: right;
+    top: 44px;
+    right: 85px;
+}
+
+button[type="submit"] {
+    width: 148px;
+    height: 43px;
+    background-color: #373867;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+button {
+    width: 131px;
+    height: 43px;
+    background-color: #FFFFFF;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    color: #373867;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+    margin-left: 20px;
+}
