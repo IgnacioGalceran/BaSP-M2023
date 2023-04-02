@@ -142,6 +142,8 @@ aside p {
     color: #46A37C;
 }
 
+/**************** HEADER *******************/
+
 .header-logo {
     position: relative;
     top: 25px;
@@ -399,3 +401,153 @@ button {
     padding: 0;
     margin-left: 20px;
 }
+
+/**************** ABOUT US SECTION *******************/
+
+.section-aboutus {
+    height: 1100px;
+}
+
+.section-aboutus h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #373867;
+    padding: 20px 0;
+}
+
+.section-aboutus h2 {
+    position: relative;
+    top: 100px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.aboutus-container {
+    position: relative;
+    top: 130px;
+    left: 120px;
+}
+
+.aboutus-p1 {
+    width: 600px;
+}
+
+.aboutus-p2 {
+    height: 350px;
+}
+
+.aboutus-p3 {
+    position: relative;
+    bottom: 80px;
+}
+
+.paragraph1 {
+    display: block;
+    position: relative;
+    bottom: 250px;
+    left: 295px;
+    width: 700px;
+    color: #6D6D6D;
+    font-size: 22px;
+    padding: 10px 0 15px;
+}
+
+.paragraph2 {
+    position: relative;
+    bottom: 270px;
+    left: 295px;
+    width: 280px;
+    color: #6D6D6D;
+    font-size: 22px;
+    padding: 10px 0 15px;
+    text-indent: -1.5px;
+}
+
+.aboutus-p1 p {
+    width: 1000px;
+    display: inline-block;
+    color: #6D6D6D;
+    font-size: 22px;
+    padding: 10px 0 15px;
+}
+
+.aboutus-p3 p {
+    position: relative;
+    bottom: 240px;
+    color: #6D6D6D;
+    font-size: 22px;
+    padding: 10px 0 15px;
+}
+
+.aboutus-image2 {
+    position: relative;
+    left: 120px;
+    bottom: 240px;
+    width: 370px;
+    height: 329px;
+}
+
+.aboutus-container span {
+    font-weight: 700;
+}
+
+.aboutus-image1 {
+    width: 270px;
+    height: 250px;
+}
+
+/**************** GYM SECTION *******************/
+
+.section-gym {
+    height: 1000px;
+    width: 1200px;
+}
+
+.section-gym h3 {
+    position: relative;
+    right: 20px;
+    width: 380px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.section-gym h2 {
+    position: relative;
+    top: 100px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.sectiongym-container {
+    position: relative;
+    top: 230px;
+    left: 80px;
+}
+
+.activities-container {
+    width: 467px;
+    height: 180px;
+    padding: 20px 0;
+    border: 2px solid #49A37B;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 0 80px 30px 0;
+    padding: 10px 0 20px 40px;
+}
+
+.activities-container:nth-child(4) {
+    position: relative;
+    bottom: 23px;
+}
+
+.activities-container li {
+    font-size: 20px;
+    font-weight: 700;
+    color: #373867;
+}
+
+
