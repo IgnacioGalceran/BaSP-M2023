@@ -9,5 +9,8 @@ I've done the design of the Landing Page in Figma
 ## Week 02
 This project is the Landing Page of the previous week (Week 01) using HTML (HyperText Markup Language) only.
 
+## Week 03
+This project is the HTML of the previous week (Week 02) with styles added with CSS (Cascading Style Sheets).
+
 ## Authors
 - Ignacio Galcerán

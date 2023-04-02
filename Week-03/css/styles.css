@@ -1,48 +1,48 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
-html, body {
+html, body, main {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
 header {
     position: fixed;
-    background-color: #373867;
     width: 1920px;
-    text-align:center;
     height: 116px;
-    align-content: center;
+    background-color: #373867;
     z-index: 100;
+    align-content: center;
+    text-align:center;
 }
 
 main {
     position: relative;
     top: 178px;
+    left: 0;
 }
 
 section {
     position: relative;
     left: 400px;
     display: inline-block;
-    border-bottom: 4px #D9D9D9 solid;
     width: 1400px;
     height: 620px;
     margin: 0;
+    border-bottom: 4px #D9D9D9 solid;
 }
 
 footer {
     position: relative;
     top: 100px;
-    background-color: #2C2C3A;
     width: 1920px;
     height: 100px;
+    background-color: #2C2C3A;
 }
 
 .footer-container {
@@ -65,10 +65,10 @@ footer p {
 
 h1 {
     display: inline-block;
-    font-size: 56px;
-    font-weight: 700;
     width: 500px;
     color: #2F3058;
+    font-weight: 700;
+    font-size: 56px;
 }
 
 h1 span {
@@ -77,10 +77,10 @@ h1 span {
 
 section p {
     display: inline-block;
-    text-align: justify;
-    font-size: 18px;
-    font-weight: 500;
     width: 500px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: justify;
 }
 
 header img {
@@ -105,10 +105,10 @@ article {
 aside {
     position: fixed;
     top: 0;
-    background-color: #373867;
-    z-index: 100;
     width: 270px;
     height: 1080px;
+    z-index: 100;
+    background-color: #373867;
 }
 
 aside li {
@@ -134,11 +134,11 @@ aside > ul {
 }
 
 aside p {
-    border-bottom: 2px solid #46A37C;
     min-width: fit-content;
     max-width: 45%;
     padding: 35px 0px 5px 0px;
     margin: 0px;
+    border-bottom: 2px solid #46A37C;
     color: #46A37C;
 }
 
@@ -153,6 +153,11 @@ aside p {
 } 
 
 /**************** ASIDE *******************/
+
+aside ul li a:hover {
+    cursor: pointer;
+    color: #46A37C;
+}
 
 .aside-logo {
     position: relative;
@@ -205,11 +210,11 @@ aside p {
 }
 
 .main-h2 {
+    width: 600px;
     margin: 0;
     padding: 40px 0;
     font-size: 25px;
     font-weight: 600;
-    width: 600px;
     color: #2F3058;
 }
 
@@ -232,9 +237,9 @@ aside p {
     position: relative;
     left: 80px;
     display: inline-block;
-    border-radius: 22px;
     width: 750px;
     height: 525px;
+    border-radius: 22px;
 }
 
 /**************** MEET US *******************/
@@ -252,7 +257,7 @@ aside p {
 }
 
 .section-meetus h3 {
-    width: 300px;
+    width: 200px;
     font-size: 25px;
     font-weight: 700;
     color: #373867;
@@ -269,7 +274,7 @@ aside p {
 }
 
 .section-meetus h3 {
-    width: 500px;
+    width: 400px;
 }
 
 article:nth-child(1) {
@@ -294,8 +299,9 @@ article:nth-child(4) {
 
 .meetus-text-container {
     position: relative;
-    left: 180px;
-    bottom: 140px;
+    bottom: 50px;
+    left: 10px;
+    display: inline-block;
     width: 400px;
     height: 150px;
 }
@@ -337,16 +343,16 @@ label {
 }
 
 label[for="checkbox"] {
-    width: 420px;
     position: relative;
     left: 18px;
+    width: 420px;
     font-weight: 600;
     font-size: 16px;
 }
 
 .input-container {
-    width: 630px;
     display: inline-block;
+    width: 630px;
     padding-bottom: 30px;
 }
 
@@ -359,10 +365,10 @@ input[type="text"], input[type="email"] {
 
 input[type="checkbox"] {
     position: relative;
-    border-radius: 4px;
     bottom: 33px;
     width: 13px;
     margin: 0;
+    border-radius: 4px;
 }
 
 textarea {
@@ -381,9 +387,9 @@ textarea {
 button[type="submit"] {
     width: 148px;
     height: 43px;
-    background-color: #373867;
     border: 1px solid #373867;
     border-radius: 5px;
+    background-color: #373867;
     color: #FFFFFF;
     font-size: 14px;
     font-weight: normal;
@@ -392,32 +398,34 @@ button[type="submit"] {
 button {
     width: 131px;
     height: 43px;
+    padding: 0;
+    margin-left: 20px;
     background-color: #FFFFFF;
     border: 1px solid #373867;
     border-radius: 5px;
     color: #373867;
     font-size: 14px;
     font-weight: bold;
-    padding: 0;
-    margin-left: 20px;
 }
 
 /**************** ABOUT US SECTION *******************/
 
 .section-aboutus {
-    height: 1100px;
+    height: 1050px;
+    width: 1200px;
 }
 
 .section-aboutus h3 {
+    width: 500px;
+    padding: 20px 0;
+    color: #373867;
     font-size: 28px;
     font-weight: 700;
-    color: #373867;
-    padding: 20px 0;
 }
 
 .section-aboutus h2 {
     position: relative;
-    top: 100px;
+    top: 80px;
     font-size: 34px;
     font-weight: 700;
     color: #373867;
@@ -427,6 +435,8 @@ button {
     position: relative;
     top: 130px;
     left: 120px;
+    display: inline-block;
+    width: 1000px;
 }
 
 .aboutus-p1 {
@@ -440,50 +450,51 @@ button {
 .aboutus-p3 {
     position: relative;
     bottom: 80px;
+    width: 1000px;
 }
 
 .paragraph1 {
-    display: block;
+    display: inline-block;
     position: relative;
-    bottom: 250px;
-    left: 295px;
+    bottom: 200px;
+    left: 20px;
     width: 700px;
-    color: #6D6D6D;
-    font-size: 22px;
     padding: 10px 0 15px;
+    font-size: 22px;
+    color: #6D6D6D;
 }
 
 .paragraph2 {
     position: relative;
-    bottom: 270px;
-    left: 295px;
+    bottom: 0px;
+    right: 680px;
     width: 280px;
+    padding: 10px 0 15px;
     color: #6D6D6D;
     font-size: 22px;
-    padding: 10px 0 15px;
     text-indent: -1.5px;
 }
 
 .aboutus-p1 p {
-    width: 1000px;
     display: inline-block;
+    width: 1000px;
+    padding: 10px 0 15px;
     color: #6D6D6D;
     font-size: 22px;
-    padding: 10px 0 15px;
 }
 
 .aboutus-p3 p {
     position: relative;
     bottom: 240px;
-    color: #6D6D6D;
-    font-size: 22px;
     padding: 10px 0 15px;
+    font-size: 22px;
+    color: #6D6D6D;
 }
 
 .aboutus-image2 {
     position: relative;
     left: 120px;
-    bottom: 240px;
+    bottom: 260px;
     width: 370px;
     height: 329px;
 }
@@ -529,14 +540,13 @@ button {
 }
 
 .activities-container {
+    display: inline-block;
     width: 467px;
     height: 180px;
-    padding: 20px 0;
-    border: 2px solid #49A37B;
-    border-radius: 8px;
-    display: inline-block;
     margin: 0 80px 30px 0;
     padding: 10px 0 20px 40px;
+    border: 2px solid #49A37B;
+    border-radius: 8px;
 }
 
 .activities-container:nth-child(4) {
