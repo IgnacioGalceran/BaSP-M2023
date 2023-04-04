@@ -1,114 +1,41 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
-html, body, main {
+html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 
 header {
     position: fixed;
-    width: 1920px;
-    height: 116px;
+    right: 0;
     background-color: #373867;
-    z-index: 100;
-    align-content: center;
+    width: 1740px;
     text-align:center;
-}
-
-main {
-    position: relative;
-    top: 178px;
-    left: 0;
-}
-
-section {
-    position: relative;
-    left: 400px;
-    display: inline-block;
-    width: 1400px;
-    height: 620px;
-    margin: 0;
-    border-bottom: 4px #D9D9D9 solid;
-}
-
-footer {
-    position: relative;
-    top: 100px;
-    width: 1920px;
-    height: 100px;
-    background-color: #2C2C3A;
-}
-
-.footer-container {
-    position: relative;
-    left: 850px;
-    display: inline-block;
-    width: 400px;
-}
-
-footer li {
-    position: relative;
-    left: 110px;
-    display: inline-block;
-    padding: 18px 20px 10px 0;
-}
-
-footer p {
-    color: #49A37B;
-}
-
-h1 {
-    display: inline-block;
-    width: 500px;
-    color: #2F3058;
-    font-weight: 700;
-    font-size: 56px;
-}
-
-h1 span {
-    color: #616280;
-}
-
-section p {
-    display: inline-block;
-    width: 500px;
-    font-weight: 500;
-    font-size: 18px;
-    text-align: justify;
-}
-
-header img {
-    position: absolute;
+    height: 116px;
+    align-content: center;
     z-index: 100;
-}
-
-label{
-    display: inline-block;
-}
-
-input {
-    display: inline-block;
-    width: 300px;
-}
-
-article {
-    display: inline-block;
-    width: 720px;
 }
 
 aside {
     position: fixed;
     top: 0;
+    background-color: #373867;
+    z-index: 100;
     width: 270px;
     height: 1080px;
-    z-index: 100;
-    background-color: #373867;
+}
+
+aside > ul {
+    position: absolute;
+    top: 55px;
+    left: 0px;
 }
 
 aside li {
@@ -127,211 +54,74 @@ aside li a, .aside-contact > a {
     font-size: 35px;
 }
 
-aside > ul {
-    position: relative;
-    top: 55px;
-    left: 20px;
-}
-
 aside p {
+    border-bottom: 2px solid #46A37C;
     min-width: fit-content;
     max-width: 45%;
     padding: 35px 0px 5px 0px;
     margin: 0px;
-    border-bottom: 2px solid #46A37C;
     color: #46A37C;
 }
 
-/**************** HEADER *******************/
-
-.header-logo {
+main {
     position: relative;
-    top: 25px;
-    right: 460px;
-    width: 300px;
-    height: 74px;
-} 
-
-/**************** ASIDE *******************/
-
-aside ul li a:hover {
-    cursor: pointer;
-    color: #46A37C;
+    padding-left: 270px;
+    padding-top: 116px;
 }
 
-.aside-logo {
+footer {
     position: relative;
-    top: 35px;
-    left: 80px;
+    top: 100px;
+    background-color: #2C2C3A;
+    width: 1920px;
+    height: 100px;
 }
 
-.aside-menu {
-    position: absolute;
-    top: 20px;
-    left: 280px;
-}
-
-.aside-contact {
-    border-bottom: 0px;
-}
-
-.aside-contact ul li {
-    padding: 25px 0 12px 0;
-    width: 225px;
-}
-
-.aside-contact > img {
+footer li {
     position: relative;
-    bottom: 5px;
-    left: 40px;
+    left: 100px;
+    display: inline-block;
+    padding: 18px 20px 10px 0;
 }
 
-.aside-contact {
-    color: #46A37C;
+footer p {
+    color: #49A37B;
 }
 
-.aside-subtitle {
-    padding-left: 4px;
-    font-weight: bold;
-}
-
-/**************** TITLE *******************/
-
-.section-title {
-    height: 680px;
-}
-
-.span-h1 {
-    color: #616280;
-}
-
-.span-h2 {
-    font-weight: bold;
-}
-
-.main-h2 {
-    width: 600px;
-    margin: 0;
-    padding: 40px 0;
-    font-size: 25px;
-    font-weight: 600;
+h1 {
+    display: inline-block;
+    font-size: 56px;
+    font-weight: 700;
+    width: 500px;
     color: #2F3058;
 }
 
-.main-h2 span {
-    font-weight: 700;
+h1 span {
+    color: #616280;
 }
 
-.text-container {
-    position: relative;
-    bottom: 50px;
+section p {
     display: inline-block;
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 500;
     width: 500px;
 }
 
-.section-title p {
-    width: 400px;
+header img {
+    position: absolute;
+    z-index: 100;
 }
 
-.main-photo {
-    position: relative;
-    left: 80px;
+article {
     display: inline-block;
-    width: 750px;
-    height: 525px;
-    border-radius: 22px;
+    width: 600px;
+    margin-bottom: 50px;
+    margin-left: 80px;
 }
 
-/**************** MEET US *******************/
-
-.section-meetus {
-    height: 900px;
-}
-
-.section-meetus h2 {
-    position: relative;
-    top: 87px;
-    font-size: 34px;
-    font-weight: 700;
-    color: #373867;
-}
-
-.section-meetus h3 {
-    width: 200px;
-    font-size: 25px;
-    font-weight: 700;
-    color: #373867;
-}
-
-.section-meetus article {
-    position: relative;
-    top: 120px;
-}
-
-.section-meetus p {
-    text-align: start;
-    width: 225px;
-}
-
-.section-meetus h3 {
-    width: 400px;
-}
-
-article:nth-child(1) {
-    position: relative;
-    top: 120px;
-}
-
-article:nth-child(2) {
-    position: relative;
-    top: 140px;
-}
-
-article:nth-child(3) {
-    position: relative;
-    top: 140px;
-}
-
-article:nth-child(4) {
-    position: relative;
-    top: 120px;
-}
-
-.meetus-text-container {
-    position: relative;
-    bottom: 50px;
-    left: 10px;
-    display: inline-block;
-    width: 400px;
-    height: 150px;
-}
-
-.meetus-container {
-    position: relative;
-    top: 60px;
-    width: 1500px
-}
-
-/**************** CONTACT US SECTION *******************/
-
-.section-contactus {
-    height: 1050px;
-    width: 1300px;
-}
-
-.section-contactus h2 {
-    position: relative;
-    top: 70px;
-    right: 5px;
-    font-size: 34px;
-    font-weight: 700;
-    color: #373867;
-}
-
-.contactus-container {
-    position: relative;
-    top: 160px;
-    right: 5px;
+form {
+    margin-left: 60px;
 }
 
 label {
@@ -344,16 +134,10 @@ label {
 
 label[for="checkbox"] {
     position: relative;
-    left: 18px;
     width: 420px;
+    left: 18px;
     font-weight: 600;
     font-size: 16px;
-}
-
-.input-container {
-    display: inline-block;
-    width: 630px;
-    padding-bottom: 30px;
 }
 
 input[type="text"], input[type="email"] {
@@ -373,33 +157,31 @@ input[type="checkbox"] {
 
 textarea {
     width: 1230px;
-    height: 180px;
+    height: 150px;
     border: 1px solid #373867;
 }
 
-.contactus-buttons {
-    position: relative;
-    float: right;
-    top: 44px;
-    right: 85px;
+input {
+    display: inline-block;
+    width: 300px;
 }
 
 button[type="submit"] {
     width: 148px;
     height: 43px;
+    background-color: #373867;
     border: 1px solid #373867;
     border-radius: 5px;
-    background-color: #373867;
     color: #FFFFFF;
     font-size: 14px;
     font-weight: normal;
 }
 
 button {
+    padding: 0;
     width: 131px;
     height: 43px;
-    padding: 0;
-    margin-left: 20px;
+    margin-left: 10px;
     background-color: #FFFFFF;
     border: 1px solid #373867;
     border-radius: 5px;
@@ -408,99 +190,285 @@ button {
     font-weight: bold;
 }
 
-/**************** ABOUT US SECTION *******************/
-
-.section-aboutus {
-    height: 1050px;
-    width: 1200px;
+.div-title, .div-meetus, .div-contactus, .div-sectiongym, .div-aboutus {
+    position: relative;
 }
 
-.section-aboutus h3 {
+/**************** HEADER *******************/
+
+.header-logo {
+    position: absolute;
+    left: 80px;
+    top: 25px;
+    width: 300px;
+    height: 74px;
+    margin-left: 90px;
+}
+
+/**************** ASIDE *******************/
+
+.aside-logo {
+    position: absolute;
+    top: 35px;
+    left: 80px;
+}
+
+.aside-menu {
+    position: absolute;
+    top: 20px;
+    left: 280px;
+}
+
+.aside-list {
+    display: inline-block;
+    position: relative;
+    top: 50px;
+    left: 20px;
+    width: 250px;
+    margin-top: 90px;
+}
+
+.aside-contact {
+    color: #46A37C;
+    border-bottom: 0px;
+}
+
+.vector {
+    width: 13px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.aside-contact ul li {
+    padding: 25px 0 12px 0;
+    width: 225px;
+}
+
+.aside-contact  img {
+    position: relative;
+    top: 3px;
+    left: 0px;
+    margin-right: 3px;
+}
+
+.aside-subtitle {
+    padding-left: 4px;
+    font-weight: bold;
+}
+
+/**************** TITLE SECTION *******************/
+
+.div-title {
+    height: 700px;
+}
+
+.section-title {
+    position: relative;
+    height: 640px;
+    width: 1500px;
+    margin-left: 50px;
+    border-bottom: 4px solid #D9D9D9;
+}
+
+.section-title p {
+    width: 400px;
+}
+
+.text-container {
+    display: inline-block;
+    position: absolute;
+    top: 80px;
+    left: 80px;
     width: 500px;
-    padding: 20px 0;
-    color: #373867;
-    font-size: 28px;
+    margin-left: 60px;
+}
+
+.main-h2 {
+    width: 600px;
+    margin: 0;
+    padding: 40px 0;
+    font-size: 25px;
+    font-weight: 600;
+    color: #2F3058;
+}
+
+.main-h2 span {
     font-weight: 700;
 }
 
-.section-aboutus h2 {
-    position: relative;
+.main-photo {
+    display: inline-block;
+    position: absolute;
+    right: 80px;
     top: 80px;
+    width: 700px;
+    margin-left: 20px;
+    height: 480px;
+    border-radius: 22px;
+}
+
+/**************** MEET US SECTION *******************/
+
+.div-meetus {
+    height: 700px;
+    width: 1500px;
+}
+
+.section-meetus {
+    position: absolute;
+    width: 1500px;
+    height: 600px;
+    margin-left: 50px;
+    border-bottom: 4px solid #D9D9D9;
+}
+
+.section-meetus h2 {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    margin-left: 10px;
     font-size: 34px;
     font-weight: 700;
     color: #373867;
 }
 
+.section-meetus h3 {
+    width: 500px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.section-meetus p {
+    width: 225px;
+    text-align: start;
+}
+
+.meetus-container {
+    position: absolute;
+    top: 80px;
+    width: 1600px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.meetus-image {
+    display: inline-block;
+    width: 150px;
+}
+
+.meetus-text-container {
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+/**************** CONTACT US SECTION *******************/
+
+.div-contactus {
+    height: 900px;
+    width: 1450px;
+}
+
+.section-contactus {
+    position: relative;
+    height: 830px;
+    margin-left: 50px;
+    border-bottom: 4px solid #D9D9D9;
+}
+
+.section-contactus h2 {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.contactus-container {
+    position: absolute;
+    top: 80px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.input-container {
+    display: inline-block;
+    width: 630px;
+    padding-bottom: 30px;
+}
+
+.contactus-buttons {
+    display: block;
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    right: 30px;
+    margin-top: 30px;
+}
+
+/**************** ABOUT US SECTION *******************/
+
+.div-aboutus {
+    height: 1100px;
+}
+
+.section-aboutus {
+    position: relative;
+    width: 1450px;
+    height: 1070px;
+    margin-left: 50px;
+    border-bottom: 4px solid #D9D9D9;
+}
+
+.section-aboutus h2 {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    margin-left: 20px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.section-aboutus h3 {
+    padding: 35px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #373867;
+}
+
 .aboutus-container {
-    position: relative;
+    position: absolute;
     top: 130px;
-    left: 120px;
-    display: inline-block;
+    right: 80px;
     width: 1000px;
-}
-
-.aboutus-p1 {
-    width: 600px;
-}
-
-.aboutus-p2 {
-    height: 350px;
-}
-
-.aboutus-p3 {
-    position: relative;
-    bottom: 80px;
-    width: 1000px;
-}
-
-.paragraph1 {
-    display: inline-block;
-    position: relative;
-    bottom: 200px;
-    left: 20px;
-    width: 700px;
-    padding: 10px 0 15px;
-    font-size: 22px;
-    color: #6D6D6D;
-}
-
-.paragraph2 {
-    position: relative;
-    bottom: 0px;
-    right: 680px;
-    width: 280px;
-    padding: 10px 0 15px;
-    color: #6D6D6D;
-    font-size: 22px;
-    text-indent: -1.5px;
-}
-
-.aboutus-p1 p {
-    display: inline-block;
-    width: 1000px;
-    padding: 10px 0 15px;
-    color: #6D6D6D;
-    font-size: 22px;
-}
-
-.aboutus-p3 p {
-    position: relative;
-    bottom: 240px;
-    padding: 10px 0 15px;
-    font-size: 22px;
-    color: #6D6D6D;
-}
-
-.aboutus-image2 {
-    position: relative;
-    left: 120px;
-    bottom: 260px;
-    width: 370px;
-    height: 329px;
+    margin-right: 60px;
 }
 
 .aboutus-container span {
     font-weight: 700;
+}
+
+.aboutus-p1 {
+    display: inline-block;
+    width: 1000px;
+}
+
+.aboutus-p1 p {
+    width: 1000px;
+    font-size: 25px;
+    color: #6D6D6D;
+}
+
+.aboutus-p2 {
+    position: relative;
+    height: 500px;
+    width: 1050px;
 }
 
 .aboutus-image1 {
@@ -508,11 +476,48 @@ button {
     height: 250px;
 }
 
+.paragraph-container {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: 700px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.paragraph1 {
+    width: 800px;
+    font-size: 25px;
+    color: #6D6D6D;
+}
+
+.paragraph2, .paragraph3 {
+    width: 330px;
+    font-size: 25px;
+    color: #6D6D6D;
+}
+
+.aboutus-image2 {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    width: 370px;
+    height: 329px;
+}
+
 /**************** GYM SECTION *******************/
 
-.section-gym {
+.div-sectiongym {
     height: 1000px;
-    width: 1200px;
+}
+
+.section-gym h2 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #373867;
 }
 
 .section-gym h3 {
@@ -525,14 +530,6 @@ button {
     color: #373867;
 }
 
-.section-gym h2 {
-    position: relative;
-    top: 100px;
-    font-size: 50px;
-    font-weight: 700;
-    color: #373867;
-}
-
 .sectiongym-container {
     position: relative;
     top: 230px;
@@ -541,10 +538,11 @@ button {
 
 .activities-container {
     display: inline-block;
-    width: 467px;
+    position: relative;
+    width: 600px;
     height: 180px;
-    margin: 0 80px 30px 0;
-    padding: 10px 0 20px 40px;
+    margin: 40px 40px;
+    padding: 20px 40px;
     border: 2px solid #49A37B;
     border-radius: 8px;
 }
@@ -561,3 +559,15 @@ button {
 }
 
 
+/******************* FOOTER *********************/
+
+.footer-container {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    margin: 0 930px;
+}
