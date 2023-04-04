@@ -1,594 +1,602 @@
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    overflow-y: scroll;
-    overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 header {
-    position: fixed;
-    left: 0;
-    background-color: #373867;
-    width: 1920px;
-    height: 116px;
-    align-content: center;
-    z-index: 100;
+  position: fixed;
+  left: 0;
+  background-color: #373867;
+  width: 1920px;
+  height: 116px;
+  align-content: center;
+  z-index: 100;
 }
 
 header img {
-    position: absolute;
-    z-index: 100;
+  position: absolute;
+  z-index: 100;
 }
 
 aside {
-    position: fixed;
-    top: 0;
-    background-color: #373867;
-    z-index: 100;
-    width: 270px;
-    height: 1080px;
+  position: fixed;
+  top: 0;
+  background-color: #373867;
+  z-index: 100;
+  width: 270px;
+  height: 1080px;
 }
 
 aside > ul {
-    position: absolute;
-    top: 55px;
-    left: 0px;
+  position: absolute;
+  top: 55px;
+  left: 0px;
 }
 
 aside li {
-    width: 190px;
-    padding: 14px 0 15px 0;
-    border-bottom: 2px solid #C4C4C4;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    color: #C4C4C4;
+  width: 190px;
+  padding: 14px 0 15px 0;
+  border-bottom: 2px solid #c4c4c4;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #c4c4c4;
 }
 
-aside li a, .aside-contact > a {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 35px;
-    list-style: none;
-    color: #C4C4C4;
+aside li a,
+.aside-contact > a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  list-style: none;
+  color: #c4c4c4;
 }
 
 aside li a:hover {
-    cursor: pointer;
-    color: #46A37C;
+  cursor: pointer;
+  color: #46a37c;
 }
 
 aside p {
-    border-bottom: 2px solid #46A37C;
-    min-width: fit-content;
-    max-width: 45%;
-    padding: 35px 0px 5px 0px;
-    margin: 0px;
-    color: #46A37C;
+  border-bottom: 2px solid #46a37c;
+  min-width: fit-content;
+  max-width: 45%;
+  padding: 35px 0px 5px 0px;
+  margin: 0px;
+  color: #46a37c;
 }
 
 main {
-    padding-top: 116px;
-    padding-left: 270px;
+  padding-top: 116px;
+  padding-left: 270px;
 }
 
 footer {
-    position: relative;
-    top: 16px;
-    background-color: #2C2C3A;
-    width: 1920px;
-    height: 100px;
+  position: relative;
+  top: 16px;
+  background-color: #2c2c3a;
+  width: 1920px;
+  height: 100px;
 }
 
 footer li {
-    position: relative;
-    left: 100px;
-    display: inline-block;
-    padding: 18px 20px 10px 0;
+  position: relative;
+  left: 100px;
+  display: inline-block;
+  padding: 18px 20px 10px 0;
 }
 
 footer p {
-    color: #49A37B;
+  color: #49a37b;
 }
 
 h1 {
-    display: inline-block;
-    font-size: 56px;
-    font-weight: 700;
-    width: 500px;
-    color: #2F3058;
+  display: inline-block;
+  font-size: 56px;
+  font-weight: 700;
+  width: 500px;
+  color: #2f3058;
 }
 
 h1 span {
-    color: #616280;
+  color: #616280;
 }
 
 section p {
-    display: inline-block;
-    text-align: justify;
-    font-size: 18px;
-    font-weight: 500;
-    width: 500px;
+  display: inline-block;
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 500;
+  width: 500px;
 }
 
 article {
-    display: inline-block;
-    width: 600px;
-    margin-bottom: 50px;
-    margin-left: 80px;
+  display: inline-block;
+  width: 600px;
+  margin-bottom: 50px;
+  margin-left: 80px;
 }
 
 form {
-    margin-left: 60px;
+  margin-left: 60px;
 }
 
 label {
-    display: block;
-    padding-bottom: 14px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #373867;
+  display: block;
+  padding-bottom: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #373867;
 }
 
 label[for="checkbox"] {
-    position: relative;
-    width: 420px;
-    left: 18px;
-    font-weight: 600;
-    font-size: 16px;
+  position: relative;
+  width: 420px;
+  left: 18px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
-input[type="text"], input[type="email"] {
-    width: 600px;
-    height: 37px;
-    border: 1px solid #373867;
-    border-radius: 4px;
+input[type="text"],
+input[type="email"] {
+  width: 600px;
+  height: 37px;
+  border: 1px solid #373867;
+  border-radius: 4px;
 }
 
 input[type="checkbox"] {
-    position: relative;
-    bottom: 33px;
-    width: 13px;
-    margin: 0;
-    border-radius: 4px;
+  position: relative;
+  bottom: 33px;
+  width: 13px;
+  margin: 0;
+  border-radius: 4px;
 }
 
 textarea {
-    width: 1230px;
-    height: 150px;
-    border: 1px solid #373867;
+  width: 1230px;
+  height: 150px;
+  border: 1px solid #373867;
 }
 
 input {
-    display: inline-block;
-    width: 300px;
+  display: inline-block;
+  width: 300px;
 }
 
 button[type="submit"] {
-    width: 148px;
-    height: 43px;
-    background-color: #373867;
-    border: 1px solid #373867;
-    border-radius: 5px;
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: normal;
+  width: 148px;
+  height: 43px;
+  background-color: #373867;
+  border: 1px solid #373867;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 button {
-    padding: 0;
-    width: 131px;
-    height: 43px;
-    margin-left: 10px;
-    background-color: #FFFFFF;
-    border: 1px solid #373867;
-    border-radius: 5px;
-    color: #373867;
-    font-size: 14px;
-    font-weight: bold;
+  padding: 0;
+  width: 131px;
+  height: 43px;
+  margin-left: 10px;
+  background-color: #ffffff;
+  border: 1px solid #373867;
+  border-radius: 5px;
+  color: #373867;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.div-title, .div-meetus, .div-contactus, .div-sectiongym, .div-aboutus {
-    position: relative;
-    display: inline-block;
+.div-title,
+.div-meetus,
+.div-contactus,
+.div-sectiongym,
+.div-aboutus {
+  position: relative;
+  display: inline-block;
 }
 
 /**************** HEADER *******************/
 
 .header-logo {
-    position: absolute;
-    left: 90px;
-    top: 25px;
-    width: 300px;
-    height: 74px;
-    margin-left: 300px;
-    cursor: pointer;
+  position: absolute;
+  left: 90px;
+  top: 25px;
+  width: 300px;
+  height: 74px;
+  margin-left: 300px;
+  cursor: pointer;
 }
 
 /**************** ASIDE *******************/
 
 .aside-logo {
-    position: absolute;
-    top: 35px;
-    left: 80px;
-    cursor: pointer;
+  position: absolute;
+  top: 35px;
+  left: 80px;
+  cursor: pointer;
 }
 
 .aside-menu {
-    position: absolute;
-    top: 20px;
-    left: 280px;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 280px;
+  cursor: pointer;
 }
 
 .aside-list {
-    display: inline-block;
-    position: relative;
-    top: 50px;
-    left: 20px;
-    width: 250px;
-    margin-top: 90px;
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  left: 20px;
+  width: 250px;
+  margin-top: 90px;
 }
 
-.aside-contact, .aside-contact a{
-    color: #46A37C;
-    border-bottom: 0px;
+.aside-contact,
+.aside-contact a {
+  color: #46a37c;
+  border-bottom: 0px;
 }
 
 .vector {
-    width: 13px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    cursor: pointer;
+  width: 13px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 .aside-contact ul li {
-    padding: 25px 0 12px 0;
-    width: 225px;
+  padding: 25px 0 12px 0;
+  width: 225px;
 }
 
 .aside-contact ul li:hover {
-    cursor: pointer;
-    color: #46A37C;
+  cursor: pointer;
+  color: #46a37c;
 }
 
-.aside-contact  img {
-    position: relative;
-    top: 3px;
-    left: 0px;
-    margin-right: 3px;
+.aside-contact img {
+  position: relative;
+  top: 3px;
+  left: 0px;
+  margin-right: 3px;
 }
 
 .aside-subtitle {
-    padding-left: 4px;
-    font-weight: bold;
+  padding-left: 4px;
+  font-weight: bold;
 }
 
 /**************** TITLE SECTION *******************/
 
 .div-title {
-    height: 760px;
+  height: 760px;
 }
 
 .section-title {
-    display: inline-block;
-    position: relative;
-    height: 680px;
-    width: 1480px;
-    margin-left: 50px;
-    border-bottom: 4px solid #D9D9D9;
+  display: inline-block;
+  position: relative;
+  height: 680px;
+  width: 1480px;
+  margin-left: 50px;
+  border-bottom: 4px solid #d9d9d9;
 }
 
 .section-title p {
-    width: 400px;
+  width: 400px;
 }
 
 .text-container {
-    display: inline-block;
-    position: absolute;
-    top: 80px;
-    left: 80px;
-    width: 500px;
-    margin-left: 60px;
+  display: inline-block;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 500px;
+  margin-left: 60px;
 }
 
 .main-h2 {
-    width: 600px;
-    margin: 0;
-    padding: 40px 0;
-    font-size: 25px;
-    font-weight: 600;
-    color: #2F3058;
+  width: 600px;
+  margin: 0;
+  padding: 40px 0;
+  font-size: 25px;
+  font-weight: 600;
+  color: #2f3058;
 }
 
 .main-h2 span {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .main-photo {
-    display: inline-block;
-    position: absolute;
-    right: 80px;
-    top: 80px;
-    width: 700px;
-    margin-left: 20px;
-    height: 480px;
-    border-radius: 22px;
+  display: inline-block;
+  position: absolute;
+  right: 80px;
+  top: 80px;
+  width: 700px;
+  margin-left: 20px;
+  height: 480px;
+  border-radius: 22px;
 }
 
 /**************** MEET US SECTION *******************/
 
 .div-meetus {
-    height: 700px;
-    width: 1500px;
+  height: 700px;
+  width: 1500px;
 }
 
 .section-meetus {
-    position: absolute;
-    width: 1480px;
-    height: 600px;
-    margin-left: 50px;
-    border-bottom: 4px solid #D9D9D9;
+  position: absolute;
+  width: 1480px;
+  height: 600px;
+  margin-left: 50px;
+  border-bottom: 4px solid #d9d9d9;
 }
 
 .section-meetus h2 {
-    position: absolute;
-    top: 0px;
-    left: 50px;
-    margin-left: 10px;
-    font-size: 34px;
-    font-weight: 700;
-    color: #373867;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  margin-left: 10px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #373867;
 }
 
 .section-meetus h3 {
-    width: 500px;
-    font-size: 25px;
-    font-weight: 700;
-    color: #373867;
+  width: 500px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #373867;
 }
 
 .section-meetus p {
-    width: 225px;
-    text-align: start;
+  width: 225px;
+  text-align: start;
 }
 
 .meetus-container {
-    position: absolute;
-    top: 80px;
-    width: 1400px;
-    margin-top: 50px;
-    margin-left: 50px;
+  position: absolute;
+  top: 80px;
+  width: 1400px;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
 .meetus-image {
-    display: inline-block;
-    width: 150px;
+  display: inline-block;
+  width: 150px;
 }
 
 .meetus-text-container {
-    display: inline-block;
-    position: absolute;
-    width: 400px;
-    height: 150px;
-    margin-left: 30px;
-    margin-top: 20px;
+  display: inline-block;
+  position: absolute;
+  width: 400px;
+  height: 150px;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 /**************** CONTACT US SECTION *******************/
 
 .div-contactus {
-    height: 900px;
-    width: 1450px;
+  height: 900px;
+  width: 1450px;
 }
 
 .section-contactus {
-    position: relative;
-    height: 830px;
-    margin-left: 50px;
-    border-bottom: 4px solid #D9D9D9;
+  position: relative;
+  height: 830px;
+  margin-left: 50px;
+  border-bottom: 4px solid #d9d9d9;
 }
 
 .section-contactus h2 {
-    position: absolute;
-    top: 0px;
-    left: 50px;
-    font-size: 34px;
-    font-weight: 700;
-    color: #373867;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #373867;
 }
 
 .contactus-container {
-    position: absolute;
-    top: 80px;
-    margin-top: 20px;
-    margin-left: 40px;
+  position: absolute;
+  top: 80px;
+  margin-top: 20px;
+  margin-left: 40px;
 }
 
 .input-container {
-    display: inline-block;
-    width: 630px;
-    padding-bottom: 30px;
+  display: inline-block;
+  width: 630px;
+  padding-bottom: 30px;
 }
 
 .contactus-buttons {
-    display: block;
-    position: absolute;
-    width: 400px;
-    height: 50px;
-    right: 30px;
-    margin-top: 30px;
+  display: block;
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  right: 30px;
+  margin-top: 30px;
 }
 
 /**************** ABOUT US SECTION *******************/
 
 .div-aboutus {
-    height: 1100px;
+  height: 1100px;
 }
 
 .section-aboutus {
-    position: relative;
-    width: 1450px;
-    height: 1070px;
-    margin-left: 60px;
-    border-bottom: 4px solid #D9D9D9;
+  position: relative;
+  width: 1450px;
+  height: 1070px;
+  margin-left: 60px;
+  border-bottom: 4px solid #d9d9d9;
 }
 
 .section-aboutus h2 {
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    margin-left: 20px;
-    font-size: 34px;
-    font-weight: 700;
-    color: #373867;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  margin-left: 20px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #373867;
 }
 
 .section-aboutus h3 {
-    padding: 35px 0;
-    font-size: 28px;
-    font-weight: 700;
-    color: #373867;
+  padding: 35px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #373867;
 }
 
 .aboutus-container {
-    position: absolute;
-    top: 130px;
-    right: 80px;
-    width: 1000px;
-    margin-right: 60px;
+  position: absolute;
+  top: 130px;
+  right: 80px;
+  width: 1000px;
+  margin-right: 60px;
 }
 
 .aboutus-container span {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .aboutus-p1 {
-    display: inline-block;
-    width: 1000px;
+  display: inline-block;
+  width: 1000px;
 }
 
 .aboutus-p1 p {
-    width: 1100px;
-    font-size: 25px;
-    color: #6D6D6D;
+  width: 1100px;
+  font-size: 25px;
+  color: #6d6d6d;
 }
 
 .aboutus-p2 {
-    position: relative;
-    height: 500px;
-    width: 1050px;
+  position: relative;
+  height: 500px;
+  width: 1050px;
 }
 
 .aboutus-image1 {
-    width: 270px;
-    height: 250px;
+  width: 270px;
+  height: 250px;
 }
 
 .paragraph-container {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    width: 700px;
-    margin-top: 20px;
-    margin-left: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 700px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .paragraph1 {
-    width: 800px;
-    font-size: 25px;
-    color: #6D6D6D;
+  width: 800px;
+  font-size: 25px;
+  color: #6d6d6d;
 }
 
-.paragraph2, .paragraph3 {
-    width: 330px;
-    font-size: 25px;
-    color: #6D6D6D;
+.paragraph2,
+.paragraph3 {
+  width: 330px;
+  font-size: 25px;
+  color: #6d6d6d;
 }
 
 .aboutus-image2 {
-    position: absolute;
-    right: 0;
-    bottom: 50px;
-    width: 370px;
-    height: 329px;
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  width: 370px;
+  height: 329px;
 }
 
 /**************** GYM SECTION *******************/
 
 .div-sectiongym {
-    height: 950px;
-    width: 1550px;
+  height: 950px;
+  width: 1550px;
 }
 
 .section-gym {
-    width: 1550px;
-    height: 800px;
+  width: 1550px;
+  height: 800px;
 }
 
 .section-gym h2 {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    font-size: 50px;
-    font-weight: 700;
-    color: #373867;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #373867;
 }
 
 .section-gym h3 {
-    position: relative;
-    right: 20px;
-    width: 380px;
-    padding-bottom: 20px;
-    font-size: 30px;
-    font-weight: 700;
-    color: #373867;
+  position: relative;
+  right: 20px;
+  width: 380px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #373867;
 }
 
 .sectiongym-container {
-    position: relative;
-    top: 230px;
-    left: 80px;
-    width: 1460px;
-    height: 610px;
-    display: inline-block;
+  position: relative;
+  top: 230px;
+  left: 80px;
+  width: 1460px;
+  height: 610px;
+  display: inline-block;
 }
 
 .activities-container {
-    display: inline-block;
-    position: relative;
-    width: 600px;
-    height: 180px;
-    margin: 40px 20px;
-    padding: 20px 40px;
-    border: 2px solid #49A37B;
-    border-radius: 8px;
+  display: inline-block;
+  position: relative;
+  width: 600px;
+  height: 180px;
+  margin: 40px 20px;
+  padding: 20px 40px;
+  border: 2px solid #49a37b;
+  border-radius: 8px;
 }
 
 .activities-container:nth-child(4) {
-    position: relative;
-    bottom: 23px;
+  position: relative;
+  bottom: 23px;
 }
 
 .activities-container li {
-    font-size: 20px;
-    font-weight: 700;
-    color: #373867;
+  font-size: 20px;
+  font-weight: 700;
+  color: #373867;
 }
-
 
 /******************* FOOTER *********************/
 
 .footer-container {
-    display: inline-block;
-    position: absolute;
-    width: 400px;
-    margin-left: 900px;
+  display: inline-block;
+  position: absolute;
+  width: 400px;
+  margin-left: 900px;
 }
