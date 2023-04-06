@@ -1,0 +1,160 @@
+/************* Main section *************/
+
+h1 {
+  padding: 12px 0;
+  font-size: 32px;
+  align-self: center;
+  order: -2;
+}
+
+.main-section h2 {
+  padding: 34px 0 20px 6px;
+  font-size: 20px;
+  width: 270px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  align-content: flex-start;
+  border-bottom: 4px solid #d9d9d9;
+}
+
+.main-section p {
+  padding: 0 0 60px 6px;
+
+  width: 92%;
+}
+
+.main-section img {
+  width: 95%;
+  height: 95%;
+  height: 275px;
+  border-radius: 22px;
+  order: -1;
+}
+
+/************* Meet us section *************/
+
+.meetus-section {
+  display: flex;
+  justify-content: center;
+  height: 120vh;
+}
+
+.meetus-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 85%;
+  height: 100%;
+  border-bottom: 4px solid #d9d9d9;
+}
+
+.meetus-div h2 {
+  color: #373867;
+}
+
+.meetus-text {
+  width: 50%;
+  margin: 12px 0 0 14.2px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #373867;
+}
+
+.meetus-div img {
+  width: 91.8px;
+  height: 91.8px;
+}
+
+article {
+  display: flex;
+}
+
+/************* Meet us section *************/
+
+.contactus-section {
+  height: 130vh;
+  display: flex;
+  justify-content: center;
+}
+
+.contactus-div {
+  height: 100%;
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contactus-div h2 {
+  align-self: start;
+  padding: 60px 0;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 70%;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 77vw;
+  height: 37px;
+  border-radius: 4px;
+  border: 1px solid #373867;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.contactus-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button[type="submit"] {
+  width: 139px;
+  height: 40px;
+}
+
+button {
+  width: 122px;
+  height: 40px;
+}
+
+@media (min-width: 834px) {
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 60px;
+  }
+  .main-div {
+    flex-direction: row;
+  }
+  .main-div img {
+    order: 4;
+  }
+}

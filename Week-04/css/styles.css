@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Calibri", "Arial";
+}
+
+h1,
+h2 {
+  color: #2f3058;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+h1 span {
+  color: #616180;
+}
+
+h2 span {
+  font-weight: 900;
+}
+
+label {
+  display: inline-block;
+  padding: 7px 0;
+  color: #373867;
+  font-size: 13px;
+  font-weight: 700;
+}
