@@ -1,5 +1,18 @@
-@media only screen and (max-width: 1024px) {
+aside {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
   aside {
-    display: none;
+    display: flex;
+    width: 15vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #373867;
+  }
+  aside ul li {
+    font-size: 1vw;
   }
 }

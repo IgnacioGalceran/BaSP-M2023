@@ -1,10 +1,8 @@
 header {
-  height: 116px;
-  width: 100vw;
-  background-color: #373867;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
+  background-color: #373867;
 }
 
 .header-menu {
@@ -16,6 +14,28 @@ header {
 .header-logo {
   align-self: center;
   margin-right: 10px;
-  width: 235px;
+  width: 250px;
   height: 45px;
+  margin-left: 40px;
+}
+
+.header-logo img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    left: 15vw;
+    width: 83.9vw;
+    height: 14vh;
+    background-color: #373867;
+  }
+
+  .header-logo {
+    width: 400px;
+  }
 }

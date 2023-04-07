@@ -36,13 +36,11 @@ h1 {
 
 .main-section h2 {
   padding: 34px 0 20px 6px;
-  font-size: 20px;
-  width: 270px;
 }
 
 .main-section p {
   padding-left: 6px;
-  width: 88%;
+  width: 74vw;
   opacity: 0.75;
   font-weight: bold;
 }
@@ -88,12 +86,10 @@ h1 {
   margin: 12px 0 0 14.2px;
 }
 
-.meetus-text p {
+.meetus-section p {
   font-weight: 600;
   color: #979797;
   width: 90%;
-  color: black;
-  opacity: 0.75;
 }
 
 .meetus-section img {
@@ -243,6 +239,13 @@ button {
   color: #373867;
 }
 
+.activities-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+}
+
 .activities {
   border: 1px solid #49a37b;
   border-radius: 8px;
@@ -252,17 +255,13 @@ button {
 
 @media (min-width: 601px) {
   h1 {
-    font-size: 48px;
     align-self: flex-start;
     padding: 27px 0 39px 0;
   }
 
   .mobile-image {
-    height: 357px;
-  }
-
-  h2 {
-    font-size: 36px;
+    width: 70vw;
+    height: 367px;
   }
 
   /* Main section */
@@ -273,6 +272,13 @@ button {
 
   .main-section h2 {
     padding: 43px 6px;
+    font-size: 24px;
+  }
+
+  .main-section p {
+    padding-left: 6px;
+    width: 61.3vw;
+    font-weight: 500;
   }
 
   /* Meet us section */
@@ -296,6 +302,7 @@ button {
 
   .meetus-section p {
     font-size: 16px;
+    color: #979797;
   }
 
   /* Contact us section */
@@ -367,35 +374,176 @@ button {
   .gym-section {
     height: 850px;
   }
+
+  .activities {
+    width: 70%;
+  }
 }
 
 @media (min-width: 1024px) {
+  .container {
+    display: flex;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    width: 82.6vw;
+    position: relative;
+    left: 15vw;
+  }
+
+  .div-container {
+    display: flex;
+    width: 75vw;
+  }
+
+  /* Main section */
+
+  h1 {
+    padding: 0;
+  }
+
   .main-section {
     flex-direction: row;
-  }
-  .main-section img {
-    order: 4;
-  }
-  .meetus-div {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
-    border-bottom: 4px solid #d9d9d9;
+    align-items: flex-start;
+    height: 700px;
   }
-  article {
-    width: 50%;
+
+  .main-section h2 {
+    font-size: 25px;
   }
+
+  .main-text {
+    margin-top: 60px;
+    width: 32vw;
+    height: 484px;
+  }
+
+  .main-section h2 {
+    width: 31vw;
+  }
+
   .mobile-image {
     display: none;
   }
   .desktop-image {
     display: flex;
+    margin-top: 60px;
   }
   .main-section img {
-    width: 40%;
-    height: 95%;
-    height: 275px;
+    width: 39.5vw;
+    height: 484px;
     border-radius: 22px;
+    order: 4;
+  }
+
+  .main-section p {
+    width: 27.5vw;
+  }
+
+  /* Meet us section */
+
+  .meetus-section {
+    height: 710px;
+  }
+
+  .meetus-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .meetus-section img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .meetus-section h2 {
+    margin-bottom: 40px;
+  }
+
+  article {
+    width: 50%;
+  }
+
+  /* Meet us section */
+
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0;
+    width: 100%;
+  }
+
+  .group-input {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 85%;
+  }
+
+  .contactus-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 30vw;
+  }
+
+  /* About us section */
+
+  .aboutus-section {
+    height: 1300px;
+  }
+
+  .aboutus-container1 {
+    width: 100%;
+  }
+
+  .aboutus-section h3 {
+    font-size: 30px;
+  }
+
+  .aboutus-section p {
+    font-size: 25px;
+  }
+
+  .aboutus-container1 {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .aboutus-container1 img {
+    width: 271px;
+    height: 249px;
+  }
+
+  .aboutus-container2 img {
+    width: 370px;
+    height: 329px;
+  }
+
+  /* Gym section */
+
+  .gym-section {
+    flex-direction: column;
+  }
+
+  .activities-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .activities {
+    width: 40%;
+    height: 150px;
   }
 }
