@@ -12,6 +12,12 @@ h2 {
   font-size: 20px;
 }
 
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #373867;
+}
+
 h1 span {
   color: #616180;
 }
@@ -20,10 +26,30 @@ h2 span {
   font-weight: 900;
 }
 
-label {
-  display: inline-block;
-  padding: 7px 0;
-  color: #373867;
-  font-size: 13px;
-  font-weight: 700;
+p {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 601px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 60px;
+  }
 }

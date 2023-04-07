@@ -1,0 +1,39 @@
+footer {
+  background-color: #2c2c3a;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  height: 81px;
+}
+
+.social-media ul {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+.social-media img {
+  margin: 0 4px;
+}
+
+.sm-facebook {
+  width: 10.82px;
+  height: 20px;
+}
+
+.sm-twitter {
+  width: 21.79px;
+  height: 17.21px;
+}
+
+.sm-instagram {
+  width: 24.17px;
+  height: 23.33px;
+}
+
+.social-media p {
+  font-size: 11px;
+  color: #49a37b;
+}
