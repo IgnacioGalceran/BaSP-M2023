@@ -391,6 +391,7 @@ button {
     width: 82.6vw;
     position: relative;
     left: 15vw;
+    padding-top: 14vh;
   }
 
   .div-container {
@@ -534,6 +535,7 @@ button {
 
   .gym-section {
     flex-direction: column;
+    height: 800px;
   }
 
   .activities-container {
