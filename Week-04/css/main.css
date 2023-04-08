@@ -102,7 +102,7 @@ article {
   display: flex;
 }
 
-/************* Meet us section *************/
+/************* Contact us section *************/
 
 .contactus-section {
   display: flex;
@@ -250,9 +250,11 @@ button {
 
 .activities {
   height: fit-content;
-  padding: 14px 30px;
+  width: 75vw;
+  padding: 14px 30px 10px 30px;
   border-radius: 8px;
-  border: 1px solid #49a37b;
+  border: 2px solid #49a37b;
+  align-self: center;
 }
 
 @media (min-width: 601px) {
@@ -315,12 +317,12 @@ button {
   }
 
   form {
-    width: 80%;
+    width: 74%;
     margin-left: 40px;
   }
 
   textarea {
-    width: 65.7vw;
+    width: 65.5vw;
   }
 
   button {
@@ -338,7 +340,7 @@ button {
   /* About us section */
 
   .aboutus-section {
-    height: 1000px;
+    height: 900px;
   }
 
   .aboutus-container1,
@@ -353,7 +355,6 @@ button {
 
   .aboutus-container1 p {
     width: 41.5vw;
-    margin-left: 18px;
   }
 
   .aboutus-container2 p {
@@ -364,7 +365,7 @@ button {
   .aboutus-container1 img,
   .aboutus-container2 img {
     width: 30.7vw;
-    height: 121px;
+    height: calc(200px + 3vw);
   }
 
   .aboutus-section p {
@@ -378,14 +379,11 @@ button {
   }
 
   .activities {
-    width: 70%;
+    width: 65%;
   }
 }
 
 @media (min-width: 1024px) {
-  .container {
-  }
-
   main {
     display: flex;
     justify-content: center;
@@ -460,8 +458,8 @@ button {
   }
 
   .meetus-section img {
-    width: 150px;
-    height: 150px;
+    width: calc(20px + 8vw);
+    height: calc(20px + 8vw);
   }
 
   .meetus-section h2 {
@@ -477,9 +475,13 @@ button {
   form {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     margin: 0;
+  }
+
+  .motive-contact {
+    width: 85%;
   }
 
   .group-input {
@@ -512,15 +514,20 @@ button {
 
   .aboutus-section h3 {
     font-size: 30px;
+    font-family: "Roboto", "Calibri";
+    font-weight: 900;
+    align-self: center;
   }
 
   .aboutus-section p {
-    font-size: 25px;
+    font-size: calc(10px + 0.8vw);
   }
 
-  .aboutus-container1 {
+  .aboutus-container1,
+  .aboutus-container2 {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .aboutus-container1 img {
@@ -528,9 +535,14 @@ button {
     height: 249px;
   }
 
+  .aboutus-container2 p {
+    width: calc(300px + 5vw);
+  }
+
+  .aboutus-container1 img,
   .aboutus-container2 img {
-    width: 370px;
-    height: 329px;
+    width: calc(230px + 10vw);
+    height: calc(130px + 10vw);
   }
 
   /* Gym section */
@@ -548,6 +560,6 @@ button {
 
   .activities {
     width: 40%;
-    height: 150px;
+    height: 130px;
   }
 }

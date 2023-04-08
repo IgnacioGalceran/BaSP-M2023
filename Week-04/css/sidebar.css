@@ -37,14 +37,14 @@ aside {
     justify-content: space-evenly;
     width: 88%;
     height: 550px;
-    margin-top: 60px;
+    margin-top: 30px;
     margin-left: 10px;
   }
 
   .aside-list > li {
     width: 80%;
     border-bottom: 2px solid #c4c4c4;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   .aside-list a {
