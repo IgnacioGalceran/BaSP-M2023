@@ -2,29 +2,30 @@ main {
   display: flex;
   justify-content: center;
 }
+
 .div-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-self: center;
-  width: 85%;
+  width: 90%;
   height: 100%;
 }
 
 /************* Main section *************/
 
 h1 {
-  padding: 12px 0;
   align-self: center;
   order: -2;
+  padding: 12px 0;
 }
 
 .main-section {
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-  border-bottom: 4px solid #d9d9d9;
   height: 810px;
+  border-bottom: 4px solid #d9d9d9;
 }
 
 .main-text {
@@ -48,8 +49,8 @@ h1 {
 .mobile-image {
   width: 95%;
   height: 275px;
-  border-radius: 22px;
   order: -1;
+  border-radius: 22px;
 }
 
 .mobile-image {
@@ -66,8 +67,8 @@ h1 {
   flex-direction: column;
   justify-content: space-evenly;
   align-self: center;
-  border-bottom: 4px solid #d9d9d9;
   height: 764px;
+  border-bottom: 4px solid #d9d9d9;
 }
 
 .meetus-div {
@@ -87,9 +88,9 @@ h1 {
 }
 
 .meetus-section p {
+  width: 90%;
   font-weight: 600;
   color: #979797;
-  width: 90%;
 }
 
 .meetus-section img {
@@ -104,11 +105,11 @@ article {
 /************* Meet us section *************/
 
 .contactus-section {
-  height: 845px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
+  height: 845px;
   border-bottom: 4px solid #d9d9d9;
 }
 
@@ -133,6 +134,7 @@ input[type="text"],
 input[type="email"] {
   width: 77vw;
   height: 37px;
+  padding: 5px;
   border-radius: 4px;
   border: 1px solid #373867;
 }
@@ -140,8 +142,8 @@ input[type="email"] {
 label {
   padding: 20px 0 7px;
   font-size: 14px;
-  color: #373867;
   font-weight: 700;
+  color: #373867;
 }
 
 textarea {
@@ -168,12 +170,12 @@ button[type="submit"] {
 button {
   width: 122px;
   height: 40px;
+  margin: 20px 0;
   background-color: white;
-  color: #373867;
   font-weight: bold;
   border: 1px solid;
   border-radius: 5px;
-  margin: 20px 0;
+  color: #373867;
 }
 
 /************* About us section *************/
@@ -182,8 +184,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border-bottom: 4px solid #d9d9d9;
   height: 750px;
+  border-bottom: 4px solid #d9d9d9;
 }
 
 .aboutus-section h2 {
@@ -211,17 +213,17 @@ button {
 }
 
 .aboutus-container1 img {
-  padding-right: 11px;
-  border-radius: 8px;
   width: 28.5vw;
   height: 83px;
+  padding-right: 11px;
+  border-radius: 8px;
 }
 
 .aboutus-container2 img {
-  padding-left: 11px;
-  border-radius: 8px;
   width: 24.4vw;
   height: 89px;
+  padding-left: 11px;
+  border-radius: 8px;
 }
 
 /************* About us section *************/
@@ -247,10 +249,10 @@ button {
 }
 
 .activities {
-  border: 1px solid #49a37b;
-  border-radius: 8px;
-  padding: 14px 30px;
   height: fit-content;
+  padding: 14px 30px;
+  border-radius: 8px;
+  border: 1px solid #49a37b;
 }
 
 @media (min-width: 601px) {
@@ -276,8 +278,8 @@ button {
   }
 
   .main-section p {
-    padding-left: 6px;
     width: 61.3vw;
+    padding-left: 6px;
     font-weight: 500;
   }
 
@@ -341,8 +343,8 @@ button {
 
   .aboutus-container1,
   .aboutus-container2 {
-    width: 100%;
     justify-content: flex-start;
+    width: 100%;
   }
 
   .aboutus-container2 {
@@ -382,21 +384,19 @@ button {
 
 @media (min-width: 1024px) {
   .container {
-    display: flex;
   }
 
   main {
     display: flex;
     justify-content: center;
-    width: 82.6vw;
-    position: relative;
-    left: 15vw;
+    width: 97vw;
     padding-top: 14vh;
+    padding-left: calc(120px + 10vw);
   }
 
   .div-container {
     display: flex;
-    width: 75vw;
+    width: 78vw;
   }
 
   /* Main section */
@@ -407,23 +407,20 @@ button {
 
   .main-section {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
-    height: 700px;
-  }
-
-  .main-section h2 {
-    font-size: 25px;
+    height: 650px;
   }
 
   .main-text {
-    margin-top: 60px;
-    width: 32vw;
+    width: 100vw;
     height: 484px;
+    margin-top: 60px;
   }
 
   .main-section h2 {
     width: 31vw;
+    font-size: 25px;
   }
 
   .mobile-image {
@@ -434,14 +431,19 @@ button {
     margin-top: 60px;
   }
   .main-section img {
-    width: 39.5vw;
-    height: 484px;
-    border-radius: 22px;
     order: 4;
+    width: calc(160px + 24vw);
+    height: calc(380px + 7vh);
+    border-radius: 22px;
+  }
+
+  .main-section div {
+    width: calc(320px + 6vw);
   }
 
   .main-section p {
-    width: 27.5vw;
+    width: calc(300px + 5vw);
+    text-indent: 20px;
   }
 
   /* Meet us section */
@@ -476,8 +478,8 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 0;
     width: 100%;
+    margin: 0;
   }
 
   .group-input {

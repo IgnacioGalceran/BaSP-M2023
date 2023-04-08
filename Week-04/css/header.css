@@ -14,9 +14,9 @@ header {
 .header-logo {
   align-self: center;
   margin-right: 10px;
+  margin-left: 40px;
   width: 250px;
   height: 45px;
-  margin-left: 40px;
 }
 
 .header-logo img {
@@ -29,11 +29,12 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     position: fixed;
-    left: 15vw;
-    width: 85vw;
+    left: 13.5vw;
+    min-width: 90vw;
+    max-width: 95vw;
     height: 14vh;
-    background-color: #373867;
     z-index: 1;
+    background-color: #373867;
   }
 
   .header-menu {
@@ -43,6 +44,6 @@ header {
   }
 
   .header-logo {
-    width: 400px;
+    width: 320px;
   }
 }

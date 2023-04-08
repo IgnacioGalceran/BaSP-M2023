@@ -7,14 +7,14 @@
 
 h1 {
   font-size: 32px;
-  color: #2f3058;
   font-weight: 600;
+  color: #2f3058;
 }
 
 h2 {
   font-size: 20px;
-  color: #2f3058;
   font-weight: 600;
+  color: #2f3058;
 }
 
 h3 {
@@ -60,6 +60,6 @@ p {
 
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: 60px;
+    font-size: calc(29px + 1vw);
   }
 }
