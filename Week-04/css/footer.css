@@ -18,18 +18,18 @@ footer {
 }
 
 .sm-facebook {
-  width: 10.82px;
-  height: 20px;
+  width: 15.82px;
+  height: 23px;
 }
 
 .sm-twitter {
-  width: 21.79px;
-  height: 17.21px;
+  width: 24.17px;
+  height: 23.33px;
 }
 
 .sm-instagram {
-  width: 24.17px;
-  height: 23.33px;
+  width: 27.17px;
+  height: 26.33px;
 }
 
 .social-media p {
@@ -46,10 +46,10 @@ footer {
 
 @media only screen and (min-width: 1024px) {
   .social-media {
-    margin-left: 100px;
-    padding-left: 100px;
+    margin-left: calc(110px + 8vw);
   }
   .social-media p {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 700;
   }
 }

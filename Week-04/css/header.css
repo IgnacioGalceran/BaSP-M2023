@@ -38,9 +38,9 @@ header {
   }
 
   .header-menu {
-    width: 40px;
-    height: 40px;
-    margin-top: 24px;
+    width: 41px;
+    height: 41px;
+    margin: 24px 0 0 15px;
   }
 
   .header-logo {
