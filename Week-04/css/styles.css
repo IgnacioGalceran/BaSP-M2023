@@ -60,6 +60,6 @@ p {
 
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: calc(25px + 2.2vw);
+    font-size: calc(20px + 2.4vw);
   }
 }
