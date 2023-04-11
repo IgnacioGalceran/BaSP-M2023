@@ -29,10 +29,6 @@ main {
 
 /************* Main section *************/
 
-h1 {
-  align-self: center;
-}
-
 .main-section h2 {
   padding: 34px 0 20px 6px;
 }
@@ -51,9 +47,15 @@ h1 {
 }
 
 .main-section {
-  justify-content: space-evenly;
-  align-content: flex-start;
+  display: flex;
   height: 680px;
+}
+
+.div-main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
 /************* Meet us section *************/
@@ -252,8 +254,7 @@ button {
   }
 
   .main-section {
-    height: 880px;
-    justify-content: space-evenly;
+    height: 750px;
   }
 
   /* Meet us section */
@@ -344,23 +345,31 @@ button {
   }
 
   .main-section img {
-    width: 45%;
+    width: 50%;
   }
 
   .main-section p {
-    width: calc(230px + 13vw);
+    width: calc(240px + 7vw);
     text-indent: 20px;
+    padding-bottom: 10px;
   }
 
   .main-section {
     flex-direction: column;
-    height: 550px;
+    align-content: center;
+    align-items: center;
+    height: 700px;
+  }
+
+  .div-main-section {
+    height: 90%;
+    align-items: center;
   }
 
   .img-text-container {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   /* Meet us section */
