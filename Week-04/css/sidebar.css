@@ -7,26 +7,16 @@ aside {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 15vw;
-    min-width: 200px;
+    width: 220px;
     height: 100vh;
     background-color: #373867;
     font-family: "Roboto", "Calibri";
   }
 
-  .aside-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 80%;
-  }
-
   .aside-logo {
     align-self: center;
-    width: 100px;
-    height: 60px;
+    width: 6.25rem;
+    height: 3.75rem;
     margin-top: 34px;
   }
 
@@ -35,8 +25,8 @@ aside {
     align-self: center;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 88%;
-    height: 550px;
+    width: 85%;
+    height: 500px;
     margin-top: 30px;
     margin-left: 10px;
   }
@@ -45,10 +35,6 @@ aside {
     width: 80%;
     border-bottom: 2px solid #c4c4c4;
     padding-bottom: 10px;
-  }
-
-  .aside-list a {
-    font-size: calc(25px + 1vw);
   }
 
   .aside-list > li a:hover {
@@ -68,26 +54,22 @@ aside {
   .aside-list li:nth-child(4) p {
     max-width: fit-content;
     margin: 43px 0 26px 0;
-    color: #46a37c;
     border-bottom: 2px solid #46a37c;
+    color: #46a37c;
   }
 
   .aside-list li:nth-child(4) ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 0;
+    margin: 0 10px 0 0;
     width: 94%;
-    height: 70%;
+    height: 78%;
   }
 
   .aside-list li:nth-child(4) li {
-    width: 100%;
-    height: 100%;
-    margin-left: 4px;
-    padding-bottom: 10px;
-    cursor: pointer;
-    font-size: calc(6px + 0.5vw);
+    margin-left: 6px;
+    font-size: 0.75rem;
     color: #c4c4c4;
   }
 
@@ -98,25 +80,25 @@ aside {
   .contact-list {
     display: flex;
     width: 100%;
-    height: 35px;
+    height: 1.5rem;
     border-bottom: 2px solid #c4c4c4;
   }
 
   .aside-list li:nth-child(4) img {
-    width: 16.27px;
-    height: 16.27px;
+    width: 1rem;
+    height: 1rem;
     cursor: pointer;
   }
 
   .aside-list li:nth-child(4) .vector {
-    width: 12px;
-    height: 8.5px;
+    width: 0.8rem;
+    height: auto;
     margin: 0 0 5px 10px;
     color: #fff;
   }
 
   aside ul li a {
-    font-size: 35px;
+    font-size: 2.2rem;
     font-weight: bold;
     color: #c4c4c4;
   }

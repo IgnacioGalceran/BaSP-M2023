@@ -1,6 +1,11 @@
+body {
+  display: flex;
+}
+
 main {
   display: flex;
   justify-content: center;
+  padding-top: 116px;
 }
 
 .div-container {
@@ -26,8 +31,6 @@ main {
 
 h1 {
   align-self: center;
-  order: -2;
-  padding: 12px 0;
 }
 
 .main-section h2 {
@@ -36,35 +39,21 @@ h1 {
 
 .main-section p {
   padding-left: 6px;
-  width: 74vw;
+  width: 80vw;
   opacity: 0.75;
-  font-weight: bold;
+}
+
+.main-section img {
+  max-width: max-content;
+  width: 100%;
+  height: auto;
+  border-radius: 1.4rem;
 }
 
 .main-section {
+  justify-content: space-evenly;
   align-content: flex-start;
-  height: 810px;
-}
-
-.main-text {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  width: 100%;
-}
-
-.mobile-image {
-  display: flex;
-  width: 95%;
-  height: 275px;
-  order: -1;
-  border-radius: 22px;
-  object-fit: cover;
-  object-position: 55%;
-}
-
-.desktop-image {
-  display: none;
+  height: 680px;
 }
 
 /************* Meet us section *************/
@@ -74,31 +63,30 @@ article {
 }
 
 .meetus-section img {
-  width: 91.8px;
-  height: 91.8px;
+  width: 5.75rem;
+  height: 5.75rem;
 }
 
 .meetus-section p {
-  width: 90%;
-  font-weight: 600;
   color: #979797;
 }
 
 .meetus-section {
-  justify-content: space-evenly;
-  height: 764px;
+  justify-content: space-around;
+  height: 650px;
 }
 
 .meetus-div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 70%;
+  justify-content: space-evenly;
+  align-self: center;
+  width: 100%;
+  height: 75%;
 }
 
 .meetus-text {
-  width: 60%;
-  margin: 12px 0 0 14.2px;
+  margin: 20px 0 0 12px;
 }
 
 /************* Contact us section *************/
@@ -107,6 +95,7 @@ form {
   display: flex;
   flex-flow: column;
   justify-content: space-evenly;
+  align-self: center;
   height: 90%;
 }
 
@@ -120,14 +109,13 @@ input[type="email"] {
 }
 
 label {
-  padding: 20px 0 7px;
-  font-size: 14px;
+  padding: 10px 0;
+  font-size: 0.875rem;
   font-weight: 700;
   color: #373867;
 }
 
 textarea {
-  width: 100%;
   height: 179px;
   border-radius: 4px;
 }
@@ -154,8 +142,6 @@ button {
 }
 
 .contactus-section {
-  flex-wrap: wrap;
-  justify-content: flex-start;
   height: 845px;
 }
 
@@ -168,6 +154,7 @@ button {
   flex-direction: column;
   align-self: flex-start;
   width: 100%;
+  margin-top: 10px;
 }
 
 .contactus-buttons {
@@ -177,47 +164,43 @@ button {
 
 /************* About us section *************/
 
-.aboutus-section h2 {
-  padding: 30px 0;
-}
-
 .aboutus-section p {
   color: #6d6d6d;
-  font-weight: normal;
 }
 
 .aboutus-section span {
   font-weight: bold;
 }
 
-.aboutus-container1 p,
-.aboutus-container2 p {
-  width: 47.5vw;
+.paragraph1,
+.paragraph3 {
+  padding: 4px 10px 0 0;
+  width: 60%;
 }
 
-.aboutus-container1 img {
-  width: calc(20px + 30vw);
-  height: calc(110px + 8.5vw);
-  border-radius: 8px;
+.paragraph2 {
+  padding: 10px 0;
+  width: 100%;
 }
 
+.aboutus-container1 img,
 .aboutus-container2 img {
-  width: 24.4vw;
-  height: 89px;
-  padding-left: 11px;
+  width: 35%;
+  max-width: max-content;
+  height: auto;
   border-radius: 8px;
 }
 
 .aboutus-section {
   justify-content: space-evenly;
-  height: 750px;
+  height: 850px;
 }
 
 .aboutus-container1,
 .aboutus-container2 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 /************* About us section *************/
@@ -227,7 +210,7 @@ button {
 }
 
 .gym-section li {
-  font-size: 13px;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #373867;
 }
@@ -235,6 +218,10 @@ button {
 .gym-section {
   justify-content: space-evenly;
   height: 650px;
+}
+
+.gym-section h3 {
+  padding-bottom: 5px;
 }
 
 .activities-container {
@@ -245,51 +232,39 @@ button {
 }
 
 .activities {
-  height: fit-content;
+  align-self: center;
+  height: 110px;
   width: 75vw;
   padding: 7px 0 10px 20px;
   border-radius: 8px;
   border: 2px solid #49a37b;
-  align-self: center;
 }
 
 @media (min-width: 601px) {
-  h1 {
-    align-self: flex-start;
-    padding: 27px 0 39px 0;
-  }
+  /* Main section */
 
   .main-section h2 {
-    padding: 43px 6px;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .main-section p {
-    width: 61.3vw;
-    padding-left: 6px;
     font-weight: 500;
   }
 
-  .mobile-image {
-    width: 70vw;
-    height: 367px;
-  }
-
-  /* Main section */
-
   .main-section {
-    height: 920px;
+    height: 880px;
+    justify-content: space-evenly;
   }
 
   /* Meet us section */
 
   .meetus-section img {
-    width: 125px;
-    height: 127px;
+    width: 7.8rem;
+    height: 7.8rem;
   }
 
   .meetus-section p {
-    font-size: 16px;
+    font-size: 1rem;
     color: #979797;
   }
 
@@ -297,28 +272,14 @@ button {
     height: 900px;
   }
 
-  .meetus-div {
-    margin-left: 40px;
-  }
-
-  .meetus-text {
-    margin: 12px 0 0 28px;
-  }
-
   /* Contact us section */
 
-  form {
-    width: 74%;
-    margin-left: 40px;
-    align-self: center;
-  }
-
   textarea {
-    width: 65.5vw;
+    width: 65vw;
   }
 
   button {
-    margin: 20px 10.5px;
+    margin-left: 10px;
   }
 
   input[type="text"],
@@ -329,14 +290,6 @@ button {
     border: 1px solid #373867;
   }
 
-  .contactus-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 88%;
-    height: 100%;
-  }
-
   .contactus-buttons {
     display: flex;
     justify-content: flex-end;
@@ -344,38 +297,29 @@ button {
 
   /* About us section */
 
+  .aboutus-container1,
+  .aboutus-container2 {
+    justify-content: flex-start;
+  }
+
   .aboutus-section p {
-    font-size: 20px;
-  }
-
-  .aboutus-container1 p {
-    width: calc(260px + 10vw);
-  }
-
-  .aboutus-container2 p {
-    width: 40vw;
-  }
-
-  .aboutus-container1 img,
-  .aboutus-container2 img {
-    width: 35vw;
-    height: calc(160px + 3vw);
+    font-size: 1.25rem;
   }
 
   .aboutus-section {
     height: 1000px;
   }
 
-  .aboutus-container1,
-  .aboutus-container2 {
-    justify-content: space-evenly;
-    width: 100%;
+  .aboutus-container1 img,
+  .aboutus-container2 img {
+    border-radius: 8px;
+    padding: 0 10px;
   }
 
   /* Gym section */
 
   .gym-section {
-    height: 850px;
+    height: 700px;
   }
 
   .activities {
@@ -384,33 +328,23 @@ button {
 }
 
 @media (min-width: 1024px) {
-  main {
-    display: flex;
-    justify-content: flex-end;
-    width: 98vw;
-    padding: 14vh 0 0 calc(100px + 9vw);
+  .general-container {
+    padding-left: 220px;
   }
 
   .div-container {
-    display: flex;
-    width: 94%;
+    width: 96%;
   }
 
   /* Main section */
 
-  h1 {
-    padding: 0;
-  }
-
   .main-section h2 {
-    font-size: calc(10px + 0.9vw);
+    padding-top: 0;
+    font-size: 1.5rem;
   }
 
   .main-section img {
-    order: 4;
-    width: calc(10px + 36.5vw);
-    height: calc(400px + 4vw);
-    border-radius: 22px;
+    width: 45%;
   }
 
   .main-section p {
@@ -419,39 +353,20 @@ button {
   }
 
   .main-section {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    align-self: center;
-    width: 100%;
-    height: 650px;
+    flex-direction: column;
+    height: 550px;
   }
 
-  .main-text {
-    width: calc(220px + 24vw);
-    height: 484px;
-    margin-top: 60px;
-  }
-
-  .mobile-image {
-    display: none;
-  }
-
-  .desktop-image {
+  .img-text-container {
     display: flex;
-    margin-top: 60px;
-    object-fit: cover;
-    object-position: 55%;
-  }
-
-  .paragraph-container {
-    width: calc(290px + 6vw);
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
   }
 
   /* Meet us section */
 
   article {
-    width: 45%;
+    width: 48%;
   }
 
   .meetus-section h2 {
@@ -459,7 +374,7 @@ button {
   }
 
   .meetus-section h3 {
-    font-size: calc(12px + 0.8vw);
+    font-size: 1.5rem;
     margin-bottom: 6px;
   }
 
@@ -469,7 +384,7 @@ button {
   }
 
   .meetus-section {
-    height: 760px;
+    height: 800px;
   }
 
   .meetus-div {
@@ -477,12 +392,10 @@ button {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0;
   }
 
   .meetus-text {
-    width: 70%;
-    margin-left: 10px;
+    width: 100%;
   }
 
   /* Contact us section */
@@ -492,23 +405,16 @@ button {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-self: center;
-    width: 90%;
     margin: 0;
   }
 
   input[type="text"],
   input[type="email"] {
-    width: 30vw;
+    width: 90%;
   }
 
   .contactus-section {
     height: 780px;
-  }
-
-  .contactus-div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
   }
 
   .group-input {
@@ -522,55 +428,30 @@ button {
     width: 50%;
   }
 
-  .contactus-container {
-    width: 100%;
-    margin-top: 14px;
-  }
-
   .contactus-buttons {
     display: flex;
     justify-content: flex-end;
-    width: 93%;
   }
 
   /* About us section */
 
-  .aboutus-section > p {
-    width: 78%;
-    align-self: center;
-  }
-
   .aboutus-section h3 {
-    font-size: 30px;
-    font-family: "Roboto", "Calibri";
+    font-size: 1.875rem;
     font-weight: 900;
-    align-self: center;
   }
 
   .aboutus-section p {
-    font-size: calc(10px + 0.8vw);
+    font-size: 1.5rem;
   }
 
-  .aboutus-container2 p {
-    width: calc(150px + 5vw);
+  .aboutus-section {
+    height: 1300px;
   }
 
   .aboutus-container1 img,
   .aboutus-container2 img {
-    width: calc(200px + 20vw);
-    height: calc(100px + 9vw);
-    padding: 0 30px;
-  }
-
-  .aboutus-section {
-    height: 1200px;
-  }
-
-  .aboutus-container1,
-  .aboutus-container2 {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 25%;
+    padding-left: 0;
   }
 
   /* Gym section */
@@ -587,7 +468,7 @@ button {
   }
 
   .activities {
-    width: 40%;
+    width: 44%;
     height: 130px;
   }
 }

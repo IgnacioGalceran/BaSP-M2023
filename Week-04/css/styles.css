@@ -1,24 +1,24 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Roboto", "Arial";
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 600;
   color: #2f3058;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #2f3058;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   color: #373867;
 }
@@ -32,34 +32,36 @@ h2 span {
 }
 
 p {
-  font-size: 14px;
-  text-align: justify;
+  font-size: 0.9rem;
 }
 
 @media only screen and (min-width: 601px) {
   h1 {
-    font-size: 32px;
+    width: 100%;
+    font-size: 3rem;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   h2 {
-    font-size: 34px;
+    font-size: 2.1rem;
   }
 
   p {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   label {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: calc(20px + 2.4vw);
+    width: fit-content;
+    padding: 0;
+    font-size: 3rem;
   }
 }
