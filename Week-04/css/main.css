@@ -233,7 +233,7 @@ button {
 
 .activities {
   align-self: center;
-  height: 110px;
+  height: 7rem;
   width: 75vw;
   padding: 7px 0 10px 20px;
   border-radius: 8px;
@@ -384,14 +384,15 @@ button {
   }
 
   .meetus-section {
-    height: 800px;
+    height: 750px;
   }
 
   .meetus-div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    width: 80%;
   }
 
   .meetus-text {
@@ -406,6 +407,7 @@ button {
     justify-content: flex-start;
     align-self: center;
     margin: 0;
+    width: 80%;
   }
 
   input[type="text"],
@@ -469,6 +471,6 @@ button {
 
   .activities {
     width: 44%;
-    height: 130px;
+    height: 8rem;
   }
 }
