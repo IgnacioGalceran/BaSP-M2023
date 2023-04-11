@@ -18,7 +18,9 @@ This project is a "Pixel perfect" of the HTML from the previous week (Week 02) w
 
 ## Week 04
 
-This project in Week 04 is a "Responsive design" of the Week 02 HTML using Flexbox CSS. Previously, we've done the design of the HTML but only for one resolution. Now, with this project, we are able to handle the layout on every device we want, because flexbox properties allow us to do that.
+This project in Week 04 is a "Responsive design" of the Week 02 HTML using Flexbox CSS. Previously, we've done the design of the HTML but only for one resolution. Now, with this project, we are able to handle the layout on every device we want, because flexbox properties allow us to do that. In order to visualize this work, you only has to click the following link, it will redirects to the html file - Week 04.
+
+- https://ignaciogalceran.github.io/BaSP-M2023/Week-04/
 
 ## Authors
 
