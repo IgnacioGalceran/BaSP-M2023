@@ -16,10 +16,10 @@ parámetros tiene error y retornar el valor NaN como resultado. */
 
 console.log('-Exercise 6.b:');
 function addValid(num1, num2) {
-  if (isNaN(num1) || isNaN(num2)) {
+  if (typeof num1 !== 'number' || typeof num2 !== 'number') {
     alert('One or both params are not a number');
     return NaN;
-  } else return Number(num1) + Number(num2);
+  } else return num1 + num2;
 }
 
 /* c. Crear una función “validateInteger” que reciba un número como parámetro y
@@ -27,8 +27,9 @@ devuelva verdadero si es un número entero. */
 
 console.log('-Exercise 6.c:');
 function validInteger(num) {
-  if (Number.isInteger(num)) return true;
-  else return false;
+  if (num % 1 === 0) {
+    return true;
+  } else return false;
 }
 
 /* d. Copiar y renombrar la función suma del ejercicio 6b) y agregarle una llamada a la función del ejercicio 6c.
@@ -37,15 +38,14 @@ retornar el número convertido a entero (redondeado). */
 
 console.log('-Exercise 6.d:');
 function addIntValid(num1, num2) {
-  if (isNaN(num1) || isNaN(num2)) {
+  if (typeof num1 !== 'number' || typeof num2 !== 'number') {
     alert('One or both params are not a number');
     return NaN;
   } else {
-    if (validInteger(Number(num1)) && validInteger(Number(num2)))
-      return Number(num1) + Number(num2);
+    if (validInteger(num1) && validInteger(num2)) return num1 + num2;
     else {
-      alert('One or both params are not integers');
-      return Math.round(Number(num1)) + Math.round(Number(num2));
+      alert('One or both params are not integer');
+      return Math.round(num1) + Math.round(num2);
     }
   }
 }
@@ -54,20 +54,18 @@ function addIntValid(num1, num2) {
 probando que todo siga funcionando igual que en el apartado anterior. */
 
 console.log('-Exercise 6.e:');
-function addIntValid2(num1, num2) {
-  if (isNaN(num1) || isNaN(num2)) {
+function intNumValid(num1, num2) {
+  if (typeof num1 !== 'number' || typeof num2 !== 'number') {
     alert('One or both params are not a number');
     return NaN;
   } else {
-    if (Number.isInteger(Number(num1)) && Number.isInteger(Number(num2)))
-      return Number(num1) + Number(num2);
-    else {
-      alert('One or both params are not integers');
-      return Math.round(Number(num1)) + Math.round(Number(num2));
-    }
+    if (num1 % 1 !== 0 || num2 % 1 !== 0) {
+      alert('One or both params are not integer');
+      return Math.round(num1) + Math.round(num2);
+    } else return num1 + num2;
   }
 }
 
 function addWithValidation(num1, num2) {
-  return addIntValid2(num1, num2);
+  return intNumValid(num1, num2);
 }

@@ -16,7 +16,7 @@ console.log('-Exercise 5.b:');
 for (let i = 0; i < arrWords.length; i++) {
   arrWords[i] =
     arrWords[i].substring(0, 1).toUpperCase() + arrWords[i].substring(1);
-  alert('Word ' + (Number(i) + 1) + ' modified');
+  alert('Word ' + i + ' modified');
 }
 
 /* c. Crear una variable llamada “sentence” que tenga un string vacío, luego al array del punto a) recorrerlo
