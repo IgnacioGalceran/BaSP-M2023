@@ -13,7 +13,7 @@ for (var i = 0; i < arrWords.length; i++) {
 y mostrar una alerta por cada palabra modificada. */
 
 console.log('-Exercise 5.b:');
-for (let i = 0; i < arrWords.length; i++) {
+for (var i = 0; i < arrWords.length; i++) {
   arrWords[i] =
     arrWords[i].substring(0, 1).toUpperCase() + arrWords[i].substring(1);
   alert('Word ' + i + ' modified');
@@ -25,7 +25,7 @@ Al final mostrar una única alerta con la cadena completa. */
 
 console.log('-Exercise 5.c:');
 var sentence = '';
-for (let i = 0; i < arrWords.length; i++) {
+for (var i = 0; i < arrWords.length; i++) {
   sentence = sentence + arrWords[i];
 }
 alert(sentence);
@@ -36,7 +36,7 @@ desde el número 0 hasta al número 9. Mostrar por la consola del navegador el a
 
 console.log('-Exercise 5.d:');
 var arrVoid = [];
-for (let i = 0; i < 10; i++) {
+for (var i = 0; i < 10; i++) {
   arrVoid.push(i);
 }
 console.log(arrVoid);

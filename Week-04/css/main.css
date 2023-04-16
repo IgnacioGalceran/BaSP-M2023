@@ -27,8 +27,6 @@ main {
   border-bottom: 4px solid #d9d9d9;
 }
 
-/************* Main section *************/
-
 .main-section h2 {
   padding: 34px 0 20px 6px;
 }
@@ -57,8 +55,6 @@ main {
   justify-content: space-evenly;
   height: 100%;
 }
-
-/************* Meet us section *************/
 
 article {
   display: flex;
@@ -91,8 +87,6 @@ article {
   margin: 20px 0 0 12px;
 }
 
-/************* Contact us section *************/
-
 form {
   display: flex;
   flex-flow: column;
@@ -101,8 +95,8 @@ form {
   height: 90%;
 }
 
-input[type="text"],
-input[type="email"] {
+input[type='text'],
+input[type='email'] {
   width: 77vw;
   height: 37px;
   padding: 5px;
@@ -122,7 +116,7 @@ textarea {
   border-radius: 4px;
 }
 
-button[type="submit"] {
+button[type='submit'] {
   width: 139px;
   height: 40px;
   background-color: #373867;
@@ -164,8 +158,6 @@ button {
   justify-content: space-evenly;
 }
 
-/************* About us section *************/
-
 .aboutus-section p {
   color: #6d6d6d;
 }
@@ -205,8 +197,6 @@ button {
   justify-content: space-between;
 }
 
-/************* About us section *************/
-
 .gym-section ol {
   margin-left: 13px;
 }
@@ -243,8 +233,6 @@ button {
 }
 
 @media (min-width: 601px) {
-  /* Main section */
-
   .main-section h2 {
     font-size: 1.5rem;
   }
@@ -254,14 +242,16 @@ button {
   }
 
   .main-section {
-    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 98%;
+    height: 800px;
   }
 
-  /* Meet us section */
-
   .meetus-section img {
-    width: 7.8rem;
-    height: 7.8rem;
+    width: calc(40px + 8vw);
+    height: calc(40px + 8vw);
   }
 
   .meetus-section p {
@@ -270,10 +260,12 @@ button {
   }
 
   .meetus-section {
-    height: 900px;
+    height: 630px;
   }
 
-  /* Contact us section */
+  .meetus-div {
+    width: 80%;
+  }
 
   textarea {
     width: 65vw;
@@ -283,8 +275,8 @@ button {
     margin-left: 10px;
   }
 
-  input[type="text"],
-  input[type="email"] {
+  input[type='text'],
+  input[type='email'] {
     width: 65.2vw;
     height: 37px;
     border-radius: 4px;
@@ -295,8 +287,6 @@ button {
     display: flex;
     justify-content: flex-end;
   }
-
-  /* About us section */
 
   .aboutus-container1,
   .aboutus-container2 {
@@ -317,8 +307,6 @@ button {
     padding: 0 10px;
   }
 
-  /* Gym section */
-
   .gym-section {
     height: 700px;
   }
@@ -336,8 +324,6 @@ button {
   .div-container {
     width: 96%;
   }
-
-  /* Main section */
 
   .main-section h2 {
     padding-top: 0;
@@ -372,8 +358,6 @@ button {
     justify-content: space-between;
   }
 
-  /* Meet us section */
-
   article {
     width: 48%;
   }
@@ -385,11 +369,6 @@ button {
   .meetus-section h3 {
     font-size: 1.5rem;
     margin-bottom: 6px;
-  }
-
-  .meetus-section img {
-    width: calc(10px + 8vw);
-    height: calc(10px + 8vw);
   }
 
   .meetus-section {
@@ -408,8 +387,6 @@ button {
     width: 100%;
   }
 
-  /* Contact us section */
-
   form {
     flex-direction: row;
     flex-wrap: wrap;
@@ -419,8 +396,8 @@ button {
     width: 80%;
   }
 
-  input[type="text"],
-  input[type="email"] {
+  input[type='text'],
+  input[type='email'] {
     width: 90%;
   }
 
@@ -444,8 +421,6 @@ button {
     justify-content: flex-end;
   }
 
-  /* About us section */
-
   .aboutus-section h3 {
     font-size: 1.875rem;
     font-weight: 900;
@@ -464,8 +439,6 @@ button {
     width: 25%;
     padding-left: 0;
   }
-
-  /* Gym section */
 
   .gym-section {
     flex-direction: column;

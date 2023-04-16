@@ -21,6 +21,7 @@ function addValid(num1, num2) {
     return NaN;
   } else return num1 + num2;
 }
+console.log(addValid('hola', 6));
 
 /* c. Crear una función “validateInteger” que reciba un número como parámetro y
 devuelva verdadero si es un número entero. */
@@ -31,6 +32,7 @@ function validInteger(num) {
     return true;
   } else return false;
 }
+console.log(validInteger(6.5));
 
 /* d. Copiar y renombrar la función suma del ejercicio 6b) y agregarle una llamada a la función del ejercicio 6c.
 y que valide que los números sean enteros. En caso que haya decimales mostrar un alert con el error y
@@ -49,6 +51,7 @@ function addIntValid(num1, num2) {
     }
   }
 }
+console.log(addIntValid(6.7, 7));
 
 /* e. Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de una nueva función
 probando que todo siga funcionando igual que en el apartado anterior. */
@@ -65,7 +68,7 @@ function intNumValid(num1, num2) {
     } else return num1 + num2;
   }
 }
-
 function addWithValidation(num1, num2) {
   return intNumValid(num1, num2);
 }
+console.log(addWithValidation('not a', 'number'));

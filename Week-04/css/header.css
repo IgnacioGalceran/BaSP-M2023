@@ -1,5 +1,4 @@
 header {
-  display: fixed;
   flex-direction: column;
   position: fixed;
   width: 100%;
@@ -15,13 +14,8 @@ header {
 }
 
 .header-logo {
-  align-self: center;
   margin-right: 10px;
   margin-left: 40px;
   width: 15.5rem;
   height: auto;
-}
-
-.header-logo img {
-  width: 100%;
 }
