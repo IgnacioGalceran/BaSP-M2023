@@ -57,18 +57,18 @@ console.log(addIntValid(6.7, 7));
 probando que todo siga funcionando igual que en el apartado anterior. */
 
 console.log('-Exercise 6.e:');
-function intNumValid(num1, num2) {
-  if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-    alert('One or both params are not a number');
+function intNumValid(num) {
+  if (typeof num !== 'number') {
+    alert('The num is not a number');
     return NaN;
   } else {
-    if (num1 % 1 !== 0 || num2 % 1 !== 0) {
-      alert('One or both params are not integer');
-      return Math.round(num1) + Math.round(num2);
-    } else return num1 + num2;
+    if (num % 1 !== 0) {
+      alert('The num is not an integer');
+      return Math.round(num);
+    } else return num;
   }
 }
 function addWithValidation(num1, num2) {
-  return intNumValid(num1, num2);
+  return intNumValid(num1) + intNumValid(num2);
 }
 console.log(addWithValidation('not a', 'number'));
