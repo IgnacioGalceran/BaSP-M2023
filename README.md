@@ -29,6 +29,7 @@ This Week 05 we'll learn how to work with Javascript by doing 6 types of exercis
 in the browser console and alerts in the HTML file.
 
 - We'll be learning the following topics:
+
   - variables and operators
   - strings
   - arrays
@@ -36,10 +37,17 @@ in the browser console and alerts in the HTML file.
   - for
   - functions
 
-##
-
 - In order to visualize this project, you only has to click the following link, it wills redirects to the HTML file - Week 05:
+
   - https://ignaciogalceran.github.io/BaSP-M2023/Week-05/
+
+## Week 06
+
+In this Week 06 we'll learn to manage with Javascript DOM, doing some forms and validations of the fields, using the Javascript DOM to capture
+tags and do the respectives changes to them.
+In order to visualize this project, you only has to click the following link, it wills redirects to the HTML file - Week 06:
+
+- https://ignaciogalceran.github.io/BaSP-M2023/Week-06/
 
 ## Authors
 

@@ -1,0 +1,31 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.1rem;
+  background-color: #2c2c3a;
+}
+
+.social-media ul {
+  display: flex;
+  justify-content: center;
+  height: 2.5rem;
+}
+
+.sm-facebook {
+  width: 1rem;
+  height: 1.5rem;
+}
+
+.sm-instagram,
+.sm-twitter {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 8px;
+}
+
+.social-media p {
+  font-size: 0.7rem;
+  font-family: "Roboto", "Arial";
+  color: #49a37b;
+}

@@ -1,0 +1,64 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+input {
+  width: 85%;
+  height: 20px;
+  margin-left: 10px;
+}
+
+form div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 50px;
+}
+
+form img {
+  width: 20px;
+  height: 20px;
+}
+
+button,
+.sign-in-btn {
+  height: 30px;
+  background-color: #cc9d42;
+  border: 0;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+
+.buttons-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 20%;
+}
+
+@media only screen and (min-width: 601px) {
+  form div {
+    width: 40%;
+  }
+
+  .buttons-contain {
+    width: 32%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  form div {
+    width: 40%;
+  }
+  .buttons-contain {
+    width: 32%;
+  }
+}

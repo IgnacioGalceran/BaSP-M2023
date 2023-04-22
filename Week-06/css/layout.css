@@ -1,0 +1,33 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 116px;
+  height: 100vh;
+  background-image: url(../../assets/images/Login-image.png);
+  background-size: cover;
+}
+
+h1,
+h2 {
+  color: white;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.login-content,
+.signup-content {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 70vh;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (min-width: 1024px) {
+  .login-content,
+  .signup-content {
+    width: 60%;
+  }
+}
