@@ -1,0 +1,63 @@
+Login:
+
+-Email:  
+
+    1. Valid email format (characters@characters.characters).
+    2. Before "@" at least 6 characters.
+    3. only 1 @ allowed.
+
+-Contraseña: 
+
+    1. Minimun of password characters is 8.
+    2. Must contain at least 1 lower case and 1 number.
+    3. Must contain at least 1 upper case.
+ 
+Sign Up:
+
+-Nombre: 
+
+    1. Only words.
+    2. Must contain between 4 and 20 characters.
+
+-Apellido:
+
+    1. Only words.
+    2. Must contain between 4 and 20 characters.
+
+-DNI:
+
+    1. Only numbers.
+    2. Must contain between 8 and 10 numbers.
+
+-Fecha de Nacimiento:
+
+    1. dd/mm/aaaa format only.
+    2. Only numbers and "/".
+    3. 28, 30 and 31 days depending on which month it is.
+    4. Year must be between 1911 and 2009.
+
+-Teléfono:
+
+    1. Only numbers.
+    2. Must contain at least 10 numbers.
+
+-Dirección:
+
+    1. Only 1 blank space.
+    2. Must contain at least 1 space, 1 letter and 1 number.
+    3. At least 5 characters.
+
+-Localidad:
+
+    1. Alphanumeric, at least 4 letters.
+
+-Código Postal:
+
+    1. Must contain only numbers.
+    2. Must contain between 4 and 5 numbers.
+
+-Repetir Contraseña:
+
+    1. Passwords must match.
+
+

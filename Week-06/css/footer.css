@@ -2,7 +2,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5.1rem;
+  height: 116px;
   background-color: #2c2c3a;
 }
 
@@ -26,6 +26,6 @@ footer {
 
 .social-media p {
   font-size: 0.7rem;
-  font-family: "Roboto", "Arial";
+  font-family: 'Roboto', 'Arial';
   color: #49a37b;
 }

@@ -52,25 +52,40 @@ function verifyPass() {
   if (inputPass.value.length !== 0) {
     if (inputPass.value.length >= 8) {
       var countNums = 0;
-      var countWords = 0;
+      var countLower = 0;
+      var countUpper = 0;
       for (let i = 0; i < inputPass.value.length; i++) {
         var code = inputPass.value.charCodeAt(i);
         if (code > 47 && code < 58) {
           countNums++;
-        } else if ((code > 64 && code < 90) || (code > 96 && code < 123)) {
-          countWords++;
+        } else if (code > 64 && code < 90) {
+          countUpper++;
+        } else {
+          if (code > 96 && code < 123) {
+            countLower++;
+          }
         }
       }
-      if (countWords === 0 || countNums === 0) {
+      if (countUpper === 0) {
         var div = document.querySelector('.password-contain');
         var p = document.createElement('p');
         div.appendChild(p);
-        p.textContent = 'password must contain 8 alphanumeric characters';
+        p.textContent = 'password must contain at least 1 upper case';
         p.classList = 'pass-error';
         inputPass.classList = 'input-pass-error';
         return false;
       } else {
-        if (countWords + countNums !== inputPass.value.length) {
+        if (countLower === 0 || countNums === 0) {
+          var div = document.querySelector('.password-contain');
+          var p = document.createElement('p');
+          div.appendChild(p);
+          p.textContent =
+            'password must contain at least 1 lower case and 1 number';
+          p.classList = 'pass-error';
+          inputPass.classList = 'input-pass-error';
+          return false;
+        }
+        if (countUpper + countLower + countNums !== inputPass.value.length) {
           var div = document.querySelector('.password-contain');
           var p = document.createElement('p');
           div.appendChild(p);
