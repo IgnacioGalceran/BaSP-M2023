@@ -41,14 +41,22 @@ button,
   align-self: flex-start;
 }
 
-.input-email-error,
-.input-pass-error {
-  border: 1px solid red;
+.input-valid {
+  border: 2px green solid;
 }
 
-.input-pass-valid,
-.input-email-valid {
-  border: 1px solid green;
+.input-error {
+  border: 2px #fe3232 solid;
+}
+
+.span-visible {
+  font-size: 0.9rem;
+  color: #fe3232;
+  margin-left: 30px;
+}
+
+.span-none {
+  display: none;
 }
 
 .email-contain,

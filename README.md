@@ -47,7 +47,7 @@ In this Week 06 we'll learn to manage with Javascript DOM, doing some forms and 
 tags and do the respectives changes to them.
 In order to visualize this project, you only has to click the following link, it wills redirects to the HTML file - Week 06:
 
-- https://ignaciogalceran.github.io/BaSP-M2023/Week-06/
+- https://ignaciogalceran.github.io/BaSP-M2023/Week-06/views
 
 ## Authors
 

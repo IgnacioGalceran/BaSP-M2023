@@ -18,11 +18,13 @@ Sign Up:
 
     1. Only words.
     2. Must contain between 4 and 20 characters.
+    3. Only 1 blank space allowed.
 
 -Apellido:
 
     1. Only words.
     2. Must contain between 4 and 20 characters.
+    3. Only 1 blank space allowed.
 
 -DNI:
 
@@ -43,13 +45,14 @@ Sign Up:
 
 -Dirección:
 
-    1. Only 1 blank space.
+    1. Max 2 blank spaces allowed.
     2. Must contain at least 1 space, 1 letter and 1 number.
     3. At least 5 characters.
 
 -Localidad:
 
     1. Alphanumeric, at least 4 letters.
+    2. Blank spaces allowed.
 
 -Código Postal:
 

@@ -13,7 +13,7 @@ var repassword = document.querySelector('input[name="confirm"]');
 var submit = document.querySelector('button[type="submit"]');
 var span = document.getElementsByClassName('span-error');
 var input = document.getElementsByClassName('signup-input');
-var emailExpression = new RegExp(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/);
+const emailExpression = new RegExp(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/);
 
 submit.addEventListener('click', handleSubmit);
 user.addEventListener('blur', verifyName);
@@ -28,66 +28,80 @@ email.addEventListener('blur', verifyEmail);
 password.addEventListener('blur', verifyPass);
 repassword.addEventListener('blur', verifyRePass);
 
+function errorApply(error, target, span) {
+  span.classList.remove('span-none');
+  span.classList.add('span-visible');
+  span.textContent = error;
+  target.classList.remove('input-valid');
+  target.classList.add('input-error');
+}
+
+function validApply(target, span) {
+  span.classList.add('span-none');
+  span.classList.remove('span-visible');
+  span.textContent = 'valid';
+  target.classList.add('input-valid');
+  target.classList.remove('input-error');
+}
+
 function verifyName(event) {
   var bool = event.target.name === 'name';
   var value = event.target.value;
   if (value.length !== 0) {
     if (value.length > 3 && value.length < 20) {
       var count = 0;
+      var countSpaces = 0;
       for (var i = 0; i < value.length; i++) {
         var code = value.charCodeAt(i);
         if ((code > 64 && code < 90) || (code > 96 && code < 123)) {
           count++;
+        } else {
+          if (code === 32) {
+            countSpaces++;
+          }
         }
       }
-      if (!(count === value.length)) {
-        if (bool) {
-          span[1].classList.remove('span-none');
-          span[0].classList.add('span-visible');
-          span[0].textContent = 'name must be only words';
-          return false;
-        } else {
-          span[1].classList.remove('span-none');
-          span[1].classList.add('span-visible');
-          span[1].textContent = 'last name must be only words';
-          return false;
-        }
+
+      if (!(count + countSpaces === value.length)) {
+        bool
+          ? errorApply(
+              'name must be only words',
+              event.target,
+              event.target.nextElementSibling
+            )
+          : errorApply(
+              'last name must be only words',
+              event.target,
+              event.target.nextElementSibling
+            );
       } else {
-        if (bool) {
-          span[0].classList.remove('span-visible');
-          span[0].classList.add('span-none');
-          span[0].textContent = 'valid';
-        } else {
-          span[0].classList.remove('span-visible');
-          span[1].classList.add('span-none');
-          span[1].textContent = 'valid';
-        }
+        countSpaces > 1
+          ? errorApply(
+              'only one space allowed',
+              event.target,
+              event.target.nextElementSibling
+            )
+          : validApply(event.target, event.target.nextElementSibling);
       }
     } else {
-      if (bool) {
-        span[0].classList.remove('span-none');
-        span[0].classList.add('span-visible');
-        span[0].textContent = 'name must contain from 4 to 20 chars';
-        return false;
-      } else {
-        span[1].classList.remove('span-none');
-        span[1].classList.add('span-visible');
-        span[1].textContent = 'last name must contain from 4 to 20 chars';
-        return false;
-      }
+      bool
+        ? errorApply(
+            'name must contain from 4 to 20 chars',
+            event.target,
+            event.target.nextElementSibling
+          )
+        : errorApply(
+            'last name must contain from 4 to 20 chars',
+            event.target,
+            event.target.nextElementSibling
+          );
     }
   } else {
-    if (bool) {
-      span[0].classList.remove('span-none');
-      span[0].classList.add('span-visible');
-      span[0].textContent = 'field is required';
-      return false;
-    } else {
-      span[1].classList.remove('span-none');
-      span[1].classList.add('span-visible');
-      span[1].textContent = 'field is required';
-      return false;
-    }
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
@@ -102,23 +116,27 @@ function verifyDni(event) {
     }
     if (count > 7 && count < 11) {
       if (!(count === event.target.value.length)) {
-        span[2].classList.add('span-visible');
-        span[2].classList.remove('span-none');
-        span[2].textContent = 'dni must contain only numbers';
+        errorApply(
+          'dni must contain only numbers',
+          event.target,
+          event.target.nextElementSibling
+        );
       } else {
-        span[2].classList.remove('span-visible');
-        span[2].classList.add('span-none');
-        span[2].textContent = 'valid';
+        validApply(event.target, event.target.nextElementSibling);
       }
     } else {
-      span[2].classList.remove('span-none');
-      span[2].classList.add('span-visible');
-      span[2].textContent = 'dni must contain between 8 and 10 numbers';
+      errorApply(
+        'dni must contain between 8 and 10 numbers',
+        event.target,
+        event.target.nextElementSibling
+      );
     }
   } else {
-    span[2].classList.remove('span-none');
-    span[2].classList.add('span-visible');
-    span[2].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
@@ -126,14 +144,18 @@ function verifyBirth(event) {
   var date = event.target.value;
   if (date.length !== 0) {
     if (date.length !== 10) {
-      span[3].classList.remove('span-none');
-      span[3].classList.add('span-visible');
-      span[3].textContent = 'dd/mm/aaaa only';
+      errorApply(
+        'dd/mm/aaaa only',
+        event.target,
+        event.target.nextElementSibling
+      );
     } else {
       if (date.substring(2, 3) !== '/' || date.substring(5, 6) !== '/') {
-        span[3].classList.remove('span-none');
-        span[3].classList.add('span-visible');
-        span[3].textContent = 'dd/mm/aaaa only';
+        errorApply(
+          'dd/mm/aaaa only',
+          event.target,
+          event.target.nextElementSibling
+        );
       } else {
         var day = date.substring(0, 2);
         var month = date.substring(3, 5);
@@ -146,26 +168,10 @@ function verifyBirth(event) {
           var codeM = month.charCodeAt(i);
           var codeY1 = year.charCodeAt(i);
           var codeY2 = year.charCodeAt(i + 2);
-          codeD > 47 && codeD < 58
-            ? countD++
-            : span[3].classList.remove('span-none');
-          span[3].classList.add('span-visible');
-          span[3].textContent = 'numbers only';
-          codeM > 47 && codeM < 58
-            ? countM++
-            : span[3].classList.remove('span-none');
-          span[3].classList.add('span-visible');
-          span[3].textContent = 'numbers only';
-          codeY1 > 47 && codeY1 < 58
-            ? countY++
-            : span[3].classList.remove('span-none');
-          span[3].classList.add('span-visible');
-          span[3].textContent = 'numbers only';
-          codeY2 > 47 && codeY2 < 58
-            ? countY++
-            : span[3].classList.remove('span-none');
-          span[3].classList.add('span-visible');
-          span[3].textContent = 'numbers only';
+          codeD > 47 && codeD < 58 ? countD++ : errorApply(3, 'numbers only');
+          codeM > 47 && codeM < 58 ? countM++ : errorApply(3, 'numbers only');
+          codeY1 > 47 && codeY1 < 58 ? countY++ : errorApply(3, 'numbers only');
+          codeY2 > 47 && codeY2 < 58 ? countY++ : errorApply(3, 'numbers only');
         }
         if (countD === 2 && countM === 2 && countY === 4) {
           var d = parseInt(day, 10);
@@ -177,36 +183,44 @@ function verifyBirth(event) {
                 ((m === 11 || m === 4 || m === 6 || m === 9) && d > 30) ||
                 (m === 02 && d > 29)
               ) {
-                span[3].classList.remove('span-none');
-                span[3].classList.add('span-visible');
-                span[3].textContent = 'wrong day number';
+                errorApply(
+                  'wrong day number',
+                  event.target,
+                  event.target.nextElementSibling
+                );
               }
               if (y > 1910 && y < 2010) {
-                span[3].classList.remove('span-visible');
-                span[3].classList.add('span-none');
-                span[3].textContent = 'valid';
+                validApply(event.target, event.target.nextElementSibling);
               } else {
-                span[3].classList.remove('span-none');
-                span[3].classList.add('span-visible');
-                span[3].textContent = 'year must be between 1911 and 2009';
+                errorApply(
+                  'year must be between 1909 and 2009',
+                  event.target,
+                  event.target.nextElementSibling
+                );
               }
             } else {
-              span[3].classList.remove('span-none');
-              span[3].classList.add('span-visible');
-              span[3].textContent = 'invalid month';
+              errorApply(
+                'invalid month',
+                event.target,
+                event.target.nextElementSibling
+              );
             }
           } else {
-            span[3].classList.remove('span-none');
-            span[3].classList.add('span-visible');
-            span[3].textContent = 'invalid day';
+            errorApply(
+              'invalid day',
+              event.target,
+              event.target.nextElementSibling
+            );
           }
         }
       }
     }
   } else {
-    span[3].classList.remove('span-none');
-    span[3].classList.add('span-visible');
-    span[3].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
@@ -221,29 +235,32 @@ function verifyCell(event) {
     }
     if (count === 10) {
       if (!(count === event.target.value.length)) {
-        span[4].classList.remove('span-none');
-        span[4].classList.add('span-visible');
-        span[4].textContent = 'cellphone field must contain only numbers';
+        errorApply(
+          'cellphone field must contain only numbers',
+          event.target,
+          event.target.nextElementSibling
+        );
       } else {
-        span[4].classList.add('span-none');
-        span[4].classList.remove('span-visible');
-        span[4].textContent = 'valid';
+        validApply(event.target, event.target.nextElementSibling);
       }
     } else {
-      span[4].classList.remove('span-none');
-      span[4].classList.add('span-visible');
-      span[4].textContent = 'cellphone must contain 10 numbers';
+      errorApply(
+        'field must contain 10 numbers',
+        event.target,
+        event.target.nextElementSibling
+      );
     }
   } else {
-    span[4].classList.remove('span-none');
-    span[4].classList.add('span-visible');
-    span[4].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
 function verifyAddress(event) {
   var value = event.target.value;
-  console.log(value);
   if (value !== 0) {
     if (value.length > 4) {
       var countSpace = 0;
@@ -257,39 +274,46 @@ function verifyAddress(event) {
           ? countL++
           : code === 32
           ? countSpace++
-          : '';
+          : null;
       }
-      console.log(countN, countSpace, countL);
       if (countL + countN + countSpace === value.length) {
-        if (countSpace > 1) {
-          span[5].classList.remove('span-none');
-          span[5].classList.add('span-visible');
-          span[5].textContent = 'only 1 space allowed';
+        if (countSpace > 2) {
+          errorApply(
+            'only 2 spaces allowed',
+            event.target,
+            event.target.nextElementSibling
+          );
         } else {
           if (countN === 0 || countSpace === 0 || countL === 0) {
-            span[5].classList.remove('span-none');
-            span[5].classList.add('span-visible');
-            span[5].textContent =
-              'should be at least 1 space, 1 letter and 1 number';
+            errorApply(
+              'at least 1 space, 1 letter and 1 number',
+              event.target,
+              event.target.nextElementSibling
+            );
+          } else {
+            validApply(event.target, event.target.nextElementSibling);
           }
         }
-        span[5].classList.add('span-none');
-        span[5].classList.remove('span-visible');
-        span[5].textContent = 'valid';
       } else {
-        span[5].classList.remove('span-none');
-        span[5].classList.add('span-visible');
-        span[5].textContent = 'only letters, numbers and 1 space';
+        errorApply(
+          'only letters, numbers and 1 space',
+          event.target,
+          event.target.nextElementSibling
+        );
       }
     } else {
-      span[5].classList.remove('span-none');
-      span[5].classList.add('span-visible');
-      span[5].textContent = 'at least 5 characters';
+      errorApply(
+        'at least 5 characters',
+        event.target,
+        event.target.nextElementSibling
+      );
     }
   } else {
-    span[5].classList.remove('span-none');
-    span[5].classList.add('span-visible');
-    span[5].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
@@ -310,25 +334,25 @@ function verifyCity(event) {
         if (code > 47 && code < 58) {
           countN++;
         } else {
-          if (code === 32) {
-            countN++;
-          }
+          code === 32 ? countN++ : null;
         }
       }
     }
     if (countL > 3 && countL + countN === value.length) {
-      span[6].classList.add('span-none');
-      span[6].classList.remove('span-visible');
-      span[6].textContent = 'valid';
+      validApply(event.target, event.target.nextElementSibling);
     } else {
-      span[6].classList.remove('span-none');
-      span[6].classList.add('span-visible');
-      span[6].textContent = 'alphanumeric, at least 4 letters';
+      errorApply(
+        'alphanumeric, at least 4 letters',
+        event.target,
+        event.target.nextElementSibling
+      );
     }
   } else {
-    span[6].classList.remove('span-none');
-    span[6].classList.add('span-visible');
-    span[6].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
@@ -343,23 +367,27 @@ function verifyPc(event) {
     }
     if (count > 3 && count < 6) {
       if (!(count === event.target.value.length)) {
-        span[7].classList.remove('span-none');
-        span[7].classList.add('span-visible');
-        span[7].textContent = 'postal code must contain only numbers';
+        errorApply(
+          'postal code must contain only numbers',
+          event.target,
+          event.target.nextElementSibling
+        );
       } else {
-        span[7].classList.add('span-none');
-        span[7].classList.remove('span-visible');
-        span[7].textContent = 'valid';
+        validApply(event.target, event.target.nextElementSibling);
       }
     } else {
-      span[7].classList.remove('span-none');
-      span[7].classList.add('span-visible');
-      span[7].textContent = 'postal code must contain between 4 and 5 numbers';
+      errorApply(
+        'postal code must contain between 4 and 5 numbers',
+        event.target,
+        event.target.nextElementSibling
+      );
     }
   } else {
-    span[7].classList.remove('span-none');
-    span[7].classList.add('span-visible');
-    span[7].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
@@ -367,27 +395,28 @@ function verifyEmail(event) {
   var value = event.target.value;
   if (value.length !== 0) {
     if (!emailExpression.test(value)) {
-      span[8].classList.remove('span-none');
-      span[8].classList.add('span-visible');
-      span[8].textContent = 'invalid email';
+      errorApply(
+        'invalid email',
+        event.target,
+        event.target.nextElementSibling
+      );
     } else {
       var index = value.indexOf('@');
       var subEmail = value.substring(0, index);
-      if (subEmail.length < 6) {
-        span[8].classList.remove('span-none');
-        span[8].classList.add('span-visible');
-        span[8].textContent =
-          'your mail has to contain at least 6 characters before @';
-      } else {
-        span[8].classList.add('span-none');
-        span[8].classList.remove('span-visible');
-        span[8].textContent = 'valid';
-      }
+      subEmail.length < 6
+        ? errorApply(
+            'email must contain at least 6 characters before @',
+            event.target,
+            event.target.nextElementSibling
+          )
+        : validApply(event.target, event.target.nextElementSibling);
     }
   } else {
-    span[8].classList.remove('span-none');
-    span[8].classList.add('span-visible');
-    span[8].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
@@ -413,116 +442,121 @@ function verifyPass(event) {
         }
       }
       if (countUpper === 0) {
-        span[9].classList.remove('span-none');
-        span[9].classList.add('span-visible');
-        span[9].textContent = 'at least 1 letter upper case';
+        errorApply(
+          'at least one upper case letter',
+          event.target,
+          event.target.nextElementSibling
+        );
       } else {
-        if (countWords === 0 || countNums === 0) {
-          span[9].classList.remove('span-none');
-          span[9].classList.add('span-visible');
-          span[9].textContent =
-            'password must contain 8 alphanumeric characters';
+        if (countLower === 0 || countNums === 0) {
+          errorApply(
+            'password must contain 8 alphanumeric characters',
+            event.target,
+            event.target.nextElementSibling
+          );
         } else {
-          if (countWords + countNums !== pass.length) {
-            span[9].classList.remove('span-none');
-            span[9].classList.add('span-visible');
-            span[9].textContent =
-              'password must contain 8 alphanumeric characters';
+          if (countUpper + countLower + countNums !== pass.length) {
+            errorApply(
+              'password must contain 8 alphanumeric characters',
+              event.target,
+              event.target.nextElementSibling
+            );
           } else {
-            span[9].classList.add('span-none');
-            span[9].classList.remove('span-visible');
-            span[9].textContent = 'valid';
+            validApply(event.target, event.target.nextElementSibling);
           }
         }
       }
     } else {
-      span[9].classList.remove('span-none');
-      span[9].classList.add('span-visible');
-      span[9].textContent = 'password must contain 8 alphanumeric characters';
+      errorApply(
+        'password must contain 8 alphanumeric characters',
+        event.target,
+        event.target.nextElementSibling
+      );
     }
   } else {
-    span[9].classList.remove('span-none');
-    span[9].classList.add('span-visible');
-    span[9].textContent = 'field is required';
+    errorApply(
+      'field is required',
+      event.target,
+      event.target.nextElementSibling
+    );
   }
 }
 
 function verifyRePass(event) {
   var rePass = event.target.value;
   var pass = input[9].value;
-  if (rePass !== pass) {
-    span[10].classList.remove('span-none');
-    span[10].classList.add('span-visible');
-    span[10].textContent = 'password do not match';
-  }
+  rePass !== pass
+    ? errorApply(
+        'password do not match',
+        event.target,
+        event.target.nextElementSibling
+      )
+    : validApply(event.target, event.target.nextElementSibling);
 }
 
 user.addEventListener('focus', nameErrorDisable);
 lastname.addEventListener('focus', nameErrorDisable);
-dni.addEventListener('focus', function () {
-  errorDisable(2);
+dni.addEventListener('focus', function (event) {
+  errorDisable(event.target.nextElementSibling);
 });
 birthdate.addEventListener('focus', function () {
-  errorDisable(3);
+  errorDisable(event.target.nextElementSibling);
 });
 cell.addEventListener('focus', function () {
-  errorDisable(4);
+  errorDisable(event.target.nextElementSibling);
 });
 address.addEventListener('focus', function () {
-  errorDisable(5);
+  errorDisable(event.target.nextElementSibling);
 });
 city.addEventListener('focus', function () {
-  errorDisable(6);
+  errorDisable(event.target.nextElementSibling);
 });
 pc.addEventListener('focus', function () {
-  errorDisable(7);
+  errorDisable(event.target.nextElementSibling);
 });
 email.addEventListener('focus', function () {
-  errorDisable(8);
+  errorDisable(event.target.nextElementSibling);
 });
 password.addEventListener('focus', function () {
-  errorDisable(9);
+  errorDisable(event.target.nextElementSibling);
 });
 repassword.addEventListener('focus', function () {
-  errorDisable(10);
+  errorDisable(event.target.nextElementSibling);
 });
 
-function errorDisable(num) {
-  console.log(num);
-  span[num].classList.remove('span-visible');
-  span[num].classList.add('span-none');
+function errorDisable(span) {
+  span.classList.remove('span-visible');
+  span.classList.add('span-none');
 }
 
 function nameErrorDisable(event) {
-  var bool = event.target.name === 'name';
-  if (bool) {
-    span[0].classList.add('span-none');
-    span[0].classList.remove('span-visible');
-  } else {
-    span[1].classList.add('span-none');
-    span[1].classList.remove('span-visible');
-  }
+  event.target.nextElementSibling.classList.add('span-none');
+  event.target.nextElementSibling.classList.remove('span-visible');
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  for (let i = 0; i < span.length; i++) {
+  var count = 0;
+  for (var i = 0; i < span.length; i++) {
     var boole = false;
     if (input[i].value === '') {
       span[i].classList.remove('span-none');
       span[i].classList.add('span-visible');
       span[i].textContent = 'field is required';
-      var alertText = 'fields are required';
+      input[i].classList.remove('input-valid');
+      input[i].classList.add('input-error');
       boole = true;
     }
   }
-  for (let i = 0; i < span.length; i++) {
+  boole ? alert('fields are required') : null;
+  for (var i = 0; i < span.length; i++) {
     if (input[i].value !== '') {
-      if (span[i].textContent !== 'valid') {
-        alert(span[i].textContent);
-      } else {
-      }
+      span[i].textContent !== 'valid' ? alert(span[i].textContent) : count++;
     }
   }
-  boole ? alert(alertText) : null;
+  count === span.length
+    ? alert(`successful form data: name: ${input[0].value} lastname: ${input[1].value} dni: ${input[2].value} birthdate: ${input[3].value}
+    phone number: ${input[4].value} address: ${input[5].value} city: ${input[6].value} postal code: ${input[7].value} email: ${input[8].value}
+    password: ${input[9].value} confirm password: ${input[10].value}`)
+    : null;
 }

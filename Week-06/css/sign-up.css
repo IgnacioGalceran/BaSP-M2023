@@ -10,6 +10,7 @@ input {
   width: 85%;
   height: 20px;
   margin-left: 10px;
+  padding: 2px;
 }
 
 form div {
@@ -37,6 +38,14 @@ button,
   border: 0;
 }
 
+.input-valid {
+  border: 2px green solid;
+}
+
+.input-error {
+  border: 2px #fe3232 solid;
+}
+
 .span-visible {
   font-size: 0.9rem;
   color: #fe3232;
@@ -44,7 +53,7 @@ button,
 }
 
 .span-none {
-  display: none !important;
+  display: none;
 }
 
 .buttons-contain {
@@ -52,7 +61,7 @@ button,
   flex-direction: column;
   justify-content: space-evenly;
   width: 50%;
-  height: 20%;
+  height: 15%;
 }
 
 @media only screen and (min-width: 601px) {
@@ -66,10 +75,19 @@ button,
 }
 
 @media only screen and (min-width: 1024px) {
+  form {
+    flex-flow: wrap row;
+    justify-content: center;
+  }
   form div {
     width: 40%;
   }
   .buttons-contain {
-    width: 32%;
+    align-items: center;
+    width: 100%;
+  }
+  button,
+  .sign-in-btn {
+    width: 50%;
   }
 }
