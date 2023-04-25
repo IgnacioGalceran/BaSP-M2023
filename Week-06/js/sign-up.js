@@ -68,21 +68,17 @@ window.onload = function () {
     return true;
   }
   function blankSpaces(param, num) {
-    var boole = false;
     var count = 0;
     //checks if white space isn't in 1st or last place
     if (param[0] === ' ' || param[param.length - 1] === ' ') {
-      return boole;
+      return;
     } else {
       for (var i = 0; i < param.length; i++) {
         if (param[i] === ' ') count++; //count of white spaces
       }
-      if (count > num)
-        return boole; //check if count is lower than num required of white spaces in the field
-      else {
-        boole = true;
-      }
-      return boole;
+      if (count > num) return false; //check if count is lower than num required of white spaces in the field
+
+      return true;
     }
   }
   function verifyName(event) {
@@ -96,7 +92,7 @@ window.onload = function () {
     } else {
       if (!(onlyLetters(value) && blankSpaces(value, 1))) {
         errorApply(
-          'last name must be only words, 1 blank space allowed, max 20 chars',
+          'must be only words, 1 white space allowed',
           event.target,
           event.target.nextElementSibling
         );
@@ -117,7 +113,7 @@ window.onload = function () {
       }
     } else {
       errorApply(
-        '10 numbers only',
+        'between 8 and 10 numbers',
         event.target,
         event.target.nextElementSibling
       );
@@ -133,7 +129,10 @@ window.onload = function () {
         event.target,
         event.target.nextElementSibling
       );
-    else validApply(event.target, event.target.nextElementSibling);
+    else {
+      validApply(event.target, event.target.nextElementSibling);
+      return true;
+    }
   }
   function verifyCell(event) {
     var value = event.target.value;
@@ -162,12 +161,14 @@ window.onload = function () {
     var boolSpace = false;
     if (value.length > 4) {
       for (let i = 0; i < value.length; i++) {
-        (value[i] >= 'a' && value[i] <= 'z') ||
-        (value[i] >= 'A' && value[i] <= 'Z')
-          ? (boolLetter = true)
-          : null;
-        value[i] >= '0' && value[i] <= '9' ? (boolNum = true) : null;
-        value[i] === ' ' ? (boolSpace = true) : null;
+        if (
+          (value[i] >= 'a' && value[i] <= 'z') ||
+          (value[i] >= 'A' && value[i] <= 'Z')
+        )
+          boolLetter = true;
+
+        if (value[i] >= '0' && value[i] <= '9') boolNum = true;
+        if (value[i] === ' ') boolSpace = true;
       }
       if (boolLetter && boolNum && boolSpace) {
         if (blankSpaces(value, 3)) {
@@ -314,26 +315,23 @@ window.onload = function () {
   function verifyRePass(event) {
     var rePass = event.target.value;
     var pass = input[9].value;
-    rePass !== pass
-      ? errorApply(
-          'password do not match',
-          event.target,
-          event.target.nextElementSibling
-        )
-      : validApply(event.target, event.target.nextElementSibling);
+    if (rePass !== pass)
+      errorApply(
+        'password do not match',
+        event.target,
+        event.target.nextElementSibling
+      );
+    else validApply(event.target, event.target.nextElementSibling);
   }
-
   for (var i = 0; i < input.length; i++) {
     input[i].addEventListener('focus', function (event) {
       errorDisable(event.target.nextElementSibling);
     });
   }
-
   function errorDisable(span) {
     span.classList.remove('span-visible');
     span.classList.add('span-none');
   }
-
   function handleSubmit(event) {
     event.preventDefault();
     var count = 0;
@@ -344,16 +342,24 @@ window.onload = function () {
         boole = true;
       }
     }
-    boole ? alert('fields are required') : null;
+    if (boole) alert('fields are required');
+    var errorStr = '';
     for (var i = 0; i < span.length; i++) {
       if (input[i].value !== '') {
-        span[i].textContent !== 'valid' ? alert(span[i].textContent) : count++;
+        if (span[i].textContent !== 'valid') {
+          errorStr =
+            errorStr + ' ' + input[i].name + ': ' + span[i].textContent;
+        } else count++;
       }
     }
-    count === span.length
-      ? alert(`successful form data: name: ${input[0].value} lastname: ${input[1].value} dni: ${input[2].value} birthdate: ${input[3].value}
+    if (errorStr) alert(errorStr);
+    if (count === span.length) {
+      var date = input[3].value;
+      var dateEl = date.split('-');
+      var formattedDate = dateEl[2] + '/' + dateEl[1] + '/' + dateEl[0];
+      alert(`successful form data: name: ${input[0].value} lastname: ${input[1].value} dni: ${input[2].value} birthdate: ${formattedDate}
     phone number: ${input[4].value} address: ${input[5].value} city: ${input[6].value} postal code: ${input[7].value} email: ${input[8].value}
-    password: ${input[9].value} confirm password: ${input[10].value}`)
-      : null;
+    password: ${input[9].value} confirm password: ${input[10].value}`);
+    }
   }
 };

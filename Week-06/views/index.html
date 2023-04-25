@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page Responsive - Week 04</title>
+    <title>Landing Page Responsive - Week 06</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/header.css" />
@@ -160,33 +160,38 @@
                 <div class="contactus-input">
                   <label> Name </label>
                   <input type="text" name="name" placeholder="Name" />
+                  <span></span>
                 </div>
                 <div class="contactus-input">
                   <label> Last Name </label>
                   <input type="text" name="lastname" placeholder="Last Name" />
+                  <span></span>
                 </div>
                 <div class="contactus-input">
                   <label> Email </label>
                   <input type="email" name="email" placeholder="Email" />
+                  <span></span>
                 </div>
               </div>
               <div class="contactus-container">
-                <label> Motive </label>
                 <div class="contactus-motive">
-                  <input type="checkbox" name="checkbox1" />
-                  <label> I want to know about memberships and costs. </label>
+                  <label> Motive </label>
+                  <select name="select">
+                    <option value="">Select an option</option>
+                    <option value="Memberships">
+                      I want to know memberships and costs.
+                    </option>
+                    <option value="Consult">
+                      I want to make a consult or sugerence
+                    </option>
+                    <option value="Claim">I want to make a claim.</option>
+                  </select>
+                  <span></span>
                 </div>
-                <div class="contactus-motive">
-                  <input type="checkbox" name="checkbox2" />
-                  <label> I want to make a question or a sugestion. </label>
-                </div>
-                <div class="contactus-motive">
-                  <input type="checkbox" name="checkbox3" />
-                  <label> I want to make a claim. </label>
-                </div>
-                <div class="contactus-input">
+                <div class="contactus-message">
                   <label> Message </label>
                   <textarea name="message"> </textarea>
+                  <span></span>
                 </div>
                 <div class="contactus-buttons">
                   <button type="submit">SEND MESSAGE</button>
