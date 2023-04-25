@@ -16,5 +16,4 @@ function menu() {
       sidebar[0].classList.remove('sidebar-none');
     }
   }
-  console.log(sidebar[0].className);
 }
