@@ -113,14 +113,14 @@ select {
 }
 
 label {
-  padding: 10px 0;
+  padding: 5px 0;
   font-size: 0.875rem;
   font-weight: 700;
   color: #373867;
 }
 
 textarea {
-  height: 200px;
+  height: 100px;
   border-radius: 4px;
 }
 
@@ -145,10 +145,11 @@ button {
   color: #373867;
 }
 
-.contactus-motive {
+.contactus-motive,
+.contactus-message {
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: 160px;
 }
 
 .input-valid {
@@ -439,10 +440,6 @@ button {
     height: 800px;
   }
 
-  .contactus-message {
-    height: 176px;
-  }
-
   .group-input {
     display: flex;
     justify-content: space-between;
@@ -457,7 +454,7 @@ button {
   .contactus-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .contactus-buttons {
