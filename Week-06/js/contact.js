@@ -7,9 +7,10 @@ window.onload = function () {
   var hamburguer = document.getElementsByClassName('header-menu');
   var sidebar = document.getElementsByTagName('aside');
   var submit = document.querySelector('button[type="submit"]');
-  var span = document.getElementsByTagName('span');
   var input = document.getElementsByTagName('input');
   var emailExpression = new RegExp(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/);
+
+  message.textContent = '';
 
   submit.addEventListener('click', handleSubmit);
   hamburguer[0].addEventListener('click', menu);
@@ -107,7 +108,8 @@ window.onload = function () {
   }
   function verifyMessage(event) {
     var value = event.target.value;
-    if (!(value.length !== 0 && value.length > 4)) {
+    console.log(value.length);
+    if (!(value.length !== 0 && value.length > 2)) {
       errorApply(
         'Alphanumeric, at least 3 characters',
         event.target,
@@ -115,7 +117,6 @@ window.onload = function () {
       );
     } else {
       for (var i = 0; i < value.length; i++) {
-        console.log(value[i]);
         if (
           !(
             (value[i] >= 'a' && value[i] <= 'z') ||
@@ -172,17 +173,15 @@ window.onload = function () {
     var spanMotive = motive.nextElementSibling;
     var spanMessage = message.nextElementSibling;
     for (var i = 0; i < input.length; i++) {
-      if (
-        input[i].value === '' &&
-        message.value === ' ' &&
-        motive.value === ''
-      ) {
+      if (input[i].value === '') {
         errorApply('field is required', input[i], input[i].nextElementSibling);
-        errorApply('field is required', motive, spanMotive);
-        errorApply('field is required', message, spanMessage);
         boole = true;
       }
     }
+    if (message.value === '')
+      errorApply('field is required', message, spanMessage);
+    if (motive.value === '')
+      errorApply('field is required', motive, spanMotive);
     if (boole) alert('fields are required');
     var errorStr = '';
     for (var i = 0; i < input.length; i++) {
