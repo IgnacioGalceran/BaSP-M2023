@@ -35,6 +35,7 @@ window.onload = function () {
     span.textContent = error;
     target.classList.add('input-error');
     target.classList.remove('input-valid');
+    console.log(target, span);
   }
   function validApply(target, span) {
     span.classList.add('span-none');
@@ -123,15 +124,19 @@ window.onload = function () {
     var date = event.target.value;
     var today = new Date();
     var dateVal = new Date(date);
-    if (today.getTime() - 1000 * 3600 * 24 * 365 * 10 < dateVal.getTime())
-      errorApply(
-        'your age must be at least 10 years old',
-        event.target,
-        event.target.nextElementSibling
-      );
-    else {
-      validApply(event.target, event.target.nextElementSibling);
-      return true;
+    if (!(date === '')) {
+      if (today.getTime() - 1000 * 3600 * 24 * 365 * 10 < dateVal.getTime())
+        errorApply(
+          'your age must be at least 10 years old',
+          event.target,
+          event.target.nextElementSibling
+        );
+      else {
+        validApply(event.target, event.target.nextElementSibling);
+        return true;
+      }
+    } else {
+      errorApply('invalid date', event.target, event.target.nextElementSibling);
     }
   }
   function verifyCell(event) {
