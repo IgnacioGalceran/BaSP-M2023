@@ -1,0 +1,107 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90%;
+}
+
+form img {
+  display: inline-block;
+  width: 30px;
+  height: 26px;
+}
+
+form p {
+  font-size: 1.2rem;
+  color: #fe3232;
+}
+
+input {
+  width: 75%;
+  height: 30px;
+  margin-left: 15px;
+}
+
+button,
+.sign-up-btn {
+  width: 60%;
+  height: 50px;
+  background-color: #cc9d42;
+  border: 0;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+}
+
+.email-error,
+.pass-error {
+  width: 300px;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.input-valid {
+  border: 2px green solid;
+}
+
+.input-error {
+  border: 2px #fe3232 solid;
+}
+
+.span-visible {
+  font-size: 0.9rem;
+  color: #fe3232;
+  margin-left: 30px;
+}
+
+.span-none {
+  display: none;
+}
+
+.email-contain,
+.password-contain {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
+  width: 70%;
+  height: 11%;
+}
+
+.form-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60%;
+}
+
+.form-text-container div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 200px;
+}
+
+@media only screen and (min-width: 601px) {
+  h1 {
+    width: fit-content;
+  }
+  input {
+    width: 60%;
+  }
+  button,
+  .sign-up-btn {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .email-contain,
+  .password-contain {
+    width: 50%;
+  }
+  input {
+    width: 80%;
+  }
+}

@@ -1,0 +1,128 @@
+aside {
+  display: none;
+}
+
+.sidebar-visible {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 220px;
+  height: 100vh;
+  background-color: #373867;
+  font-family: 'Roboto', 'Calibri';
+  z-index: 1;
+}
+
+.sidebar-none {
+  display: none;
+}
+
+.aside-logo {
+  align-self: center;
+  width: 6.25rem;
+  height: 3.75rem;
+  margin-top: 34px;
+}
+
+aside ul {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 85%;
+  height: 500px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.aside-list > li {
+  width: 80%;
+  border-bottom: 2px solid #c4c4c4;
+  padding-bottom: 10px;
+}
+
+.aside-list > li a:hover {
+  cursor: pointer;
+  color: #46a37c;
+}
+
+.aside-list li:nth-child(4) {
+  width: 100%;
+  border: 0;
+}
+
+.aside-list li:nth-child(4) a {
+  color: #46a37c;
+}
+
+.aside-list li:nth-child(4) > p {
+  max-width: fit-content;
+  margin: 43px 0 26px 0;
+  border-bottom: 2px solid #46a37c;
+  color: #46a37c;
+}
+
+.aside-list li:nth-child(4) ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 10px 0 0;
+  width: 94%;
+  height: 78%;
+}
+
+.aside-list li:nth-child(4) li {
+  height: fit-content;
+  width: 100%;
+  padding-bottom: 5px;
+  font-size: 0.75rem;
+  color: #c4c4c4;
+  border-bottom: 2px solid #c4c4c4;
+}
+
+.aside-list li:nth-child(4) ul p {
+  display: inline-block;
+  position: relative;
+  bottom: 4px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.aside-list li:nth-child(4) li:hover {
+  color: #46a37c;
+}
+
+.aside-list li:nth-child(4) img {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.aside-list li:nth-child(4) .vector {
+  width: 0.8rem;
+  height: auto;
+  margin: 0 0 5px 10px;
+  color: #fff;
+}
+
+aside ul li a {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #c4c4c4;
+}
+
+@media only screen and (min-width: 1024px) {
+  aside {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 220px;
+    height: 100vh;
+    background-color: #373867;
+    font-family: 'Roboto', 'Calibri';
+    z-index: 1;
+  }
+  .sidebar-none {
+    display: flex;
+  }
+}

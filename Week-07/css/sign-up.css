@@ -1,0 +1,93 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+input {
+  width: 85%;
+  height: 20px;
+  margin-left: 10px;
+  padding: 2px;
+}
+
+form div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 40px;
+}
+
+form img {
+  width: 20px;
+  height: 20px;
+}
+
+button,
+.sign-in-btn {
+  height: 30px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 30px;
+  background-color: #cc9d42;
+  color: white;
+  border: 0;
+}
+
+.input-valid {
+  border: 2px green solid;
+}
+
+.input-error {
+  border: 2px #fe3232 solid;
+}
+
+.span-visible {
+  font-size: 0.9rem;
+  color: #fe3232;
+  margin-left: 30px;
+}
+
+.span-none {
+  display: none;
+}
+
+.buttons-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 15%;
+}
+
+@media only screen and (min-width: 601px) {
+  form div {
+    width: 40%;
+  }
+
+  .buttons-contain {
+    width: 32%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  form {
+    flex-flow: wrap row;
+    justify-content: center;
+  }
+  form div {
+    width: 40%;
+  }
+  .buttons-contain {
+    align-items: center;
+    width: 100%;
+  }
+  button,
+  .sign-in-btn {
+    width: 50%;
+  }
+}

@@ -49,6 +49,19 @@ In order to visualize this project, you only has to click the following link, it
 
 - https://ignaciogalceran.github.io/BaSP-M2023/Week-06/views
 
+## Week 07
+
+In Week 07 we'll learn how to get data from an API and how to handle with the responses and errors that throws to us.
+We'll use the form validations created in the previous Week 06, and send the valid form data to the following API:
+
+- https://api-rest-server.vercel.app
+
+We'll get the responses and if successful, we have to store the data in the localStorage of the navigator. If the API throws us an error,
+we have to show it in an alert.
+In order to visualize this project, you only has to click the following link, it wills redirects to the HTML file - Week 07:
+
+- https://ignaciogalceran.github.io/BaSP-M2023/Week-07/views
+
 ## Authors
 
 - Ignacio Galcerán.

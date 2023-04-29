@@ -1,0 +1,499 @@
+body {
+  display: flex;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding-top: 116px;
+}
+
+.div-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: center;
+  width: 90%;
+  height: 100%;
+}
+
+.main-section,
+.meetus-section,
+.contactus-section,
+.aboutus-section,
+.gym-section {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 4px solid #d9d9d9;
+}
+
+.main-section h2 {
+  padding: 34px 0 20px 6px;
+}
+
+.main-section p {
+  padding-left: 6px;
+  width: 80vw;
+  opacity: 0.75;
+}
+
+.main-section img {
+  max-width: max-content;
+  width: 100%;
+  height: auto;
+  border-radius: 1.4rem;
+}
+
+.main-section {
+  display: flex;
+  height: 680px;
+}
+
+.div-main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+article {
+  display: flex;
+}
+
+.meetus-section img {
+  width: 5.75rem;
+  height: 5.75rem;
+}
+
+.meetus-section p {
+  color: #979797;
+}
+
+.meetus-section {
+  justify-content: space-around;
+  height: 650px;
+}
+
+.meetus-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: center;
+  width: 100%;
+  height: 75%;
+}
+
+.meetus-text {
+  margin: 20px 0 0 12px;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-self: center;
+  height: 90%;
+}
+
+input[type='text'],
+input[type='email'] {
+  width: 77vw;
+  height: 37px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #373867;
+}
+
+select {
+  width: 75vw;
+  height: 37px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #373867;
+}
+
+label {
+  padding: 5px 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #373867;
+}
+
+textarea {
+  height: 100px;
+  border-radius: 4px;
+}
+
+button[type='submit'] {
+  width: 139px;
+  height: 40px;
+  background-color: #373867;
+  color: white;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+button {
+  width: 122px;
+  height: 40px;
+  margin: 20px 0;
+  background-color: white;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #373867;
+}
+
+.contactus-motive,
+.contactus-message {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+}
+
+.input-valid {
+  border: 2px green solid !important;
+}
+
+.input-error {
+  border: 2px #fe3232 solid !important;
+}
+
+.span-visible {
+  font-size: 0.9rem;
+  color: #fe3232;
+}
+
+.span-none {
+  display: none;
+}
+
+.contactus-section {
+  height: 845px;
+}
+
+.contactus-section h2 {
+  padding: 40px 0;
+}
+
+.contactus-input {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.contactus-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.aboutus-section p {
+  color: #6d6d6d;
+}
+
+.aboutus-section span {
+  font-weight: bold;
+}
+
+.paragraph1,
+.paragraph3 {
+  padding: 4px 10px 0 0;
+  width: 60%;
+}
+
+.paragraph2 {
+  padding: 10px 0;
+  width: 100%;
+}
+
+.aboutus-container1 img,
+.aboutus-container2 img {
+  width: 35%;
+  max-width: max-content;
+  height: auto;
+  border-radius: 8px;
+}
+
+.aboutus-section {
+  justify-content: space-evenly;
+  height: 850px;
+}
+
+.aboutus-container1,
+.aboutus-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gym-section ol {
+  margin-left: 13px;
+}
+
+.gym-section li {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #373867;
+}
+
+.gym-section {
+  justify-content: space-evenly;
+  height: 650px;
+}
+
+.gym-section h3 {
+  padding-bottom: 5px;
+}
+
+.activities-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.activities {
+  align-self: center;
+  height: 7rem;
+  width: 75vw;
+  padding: 7px 0 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #49a37b;
+}
+
+@media (min-width: 601px) {
+  .main-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .main-section p {
+    font-weight: 500;
+  }
+
+  .main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 98%;
+    height: 800px;
+  }
+
+  .meetus-section img {
+    width: calc(40px + 8vw);
+    height: calc(40px + 8vw);
+  }
+
+  .meetus-section p {
+    font-size: 1rem;
+    color: #979797;
+  }
+
+  .meetus-section {
+    height: 630px;
+  }
+
+  .meetus-div {
+    width: 80%;
+  }
+
+  textarea {
+    width: 65vw;
+  }
+
+  button {
+    margin-left: 10px;
+  }
+
+  input[type='text'],
+  input[type='email'] {
+    width: 65.2vw;
+    height: 37px;
+    border-radius: 4px;
+  }
+
+  .contactus-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .aboutus-container1,
+  .aboutus-container2 {
+    justify-content: flex-start;
+  }
+
+  .aboutus-section p {
+    font-size: 1.25rem;
+  }
+
+  .aboutus-section {
+    height: 1000px;
+  }
+
+  .aboutus-container1 img,
+  .aboutus-container2 img {
+    border-radius: 8px;
+    padding: 0 10px;
+  }
+
+  .gym-section {
+    height: 700px;
+  }
+
+  .activities {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .general-container {
+    padding-left: 220px;
+  }
+
+  .div-container {
+    width: 96%;
+  }
+
+  .main-section h2 {
+    padding-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .main-section img {
+    width: 50%;
+  }
+
+  .main-section p {
+    width: calc(240px + 7vw);
+    text-indent: 20px;
+    padding-bottom: 10px;
+  }
+
+  .main-section {
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    height: 700px;
+  }
+
+  .div-main-section {
+    height: 90%;
+    align-items: center;
+  }
+
+  .img-text-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  article {
+    width: 48%;
+  }
+
+  .meetus-section h2 {
+    margin-bottom: 40px;
+  }
+
+  .meetus-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  .meetus-section {
+    height: 750px;
+  }
+
+  .meetus-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+
+  .meetus-text {
+    width: 100%;
+  }
+
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: center;
+    margin: 0;
+    width: 80%;
+  }
+
+  select {
+    width: 30vw;
+  }
+  input[type='text'],
+  input[type='email'] {
+    width: 90%;
+  }
+
+  .contactus-section {
+    height: 800px;
+  }
+
+  .group-input {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .contactus-input {
+    width: 50%;
+  }
+
+  .contactus-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .contactus-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .aboutus-section h3 {
+    font-size: 1.875rem;
+    font-weight: 900;
+  }
+
+  .aboutus-section p {
+    font-size: 1.5rem;
+  }
+
+  .aboutus-section {
+    height: 1300px;
+  }
+
+  .aboutus-container1 img,
+  .aboutus-container2 img {
+    width: 25%;
+    padding-left: 0;
+  }
+
+  .gym-section {
+    flex-direction: column;
+    height: 800px;
+  }
+
+  .activities-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .activities {
+    width: 44%;
+    height: 8rem;
+  }
+}
