@@ -5,18 +5,33 @@ window.onload = function () {
   var emailExpression = new RegExp(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/);
   var span = document.getElementsByTagName('span');
   var input = document.getElementsByTagName('input');
+  var modal = document.getElementById('myModal');
+  var accept = document.getElementsByClassName('btn-accept')[0];
+  var modalText = document.getElementsByClassName('modalText')[0];
 
   input[0].addEventListener('blur', verifyEmail);
   input[1].addEventListener('blur', verifyPass);
   submit.addEventListener('click', handleSubmit);
 
-  function success(data) {
-    alert(`Successful login: ${data.msg}`);
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.remove('modal-block');
+      modal.classList.add('modal-none');
+    }
+  };
+
+  accept.onclick = function () {
+    modal.classList.remove('modal-block');
+    modal.classList.add('modal-none');
+  };
+
+  function modalApply(msg) {
+    modal.classList.add('modal-block');
+    modalText.textContent = msg;
   }
-  function failure(data) {
-    alert(data.msg);
-  }
+
   function errorApply(error, target, span) {
+    console.log(span);
     span.textContent = error;
     span.classList.remove('span-none');
     span.classList.add('span-visible');
@@ -112,6 +127,7 @@ window.onload = function () {
   function handleSubmit(event) {
     event.preventDefault();
     var count = 0;
+    var error = '';
     var url = 'https://api-rest-server.vercel.app';
     var query = `email=${email.value}&password=${pass.value}`;
     for (var i = 0; i < input.length; i++) {
@@ -121,20 +137,26 @@ window.onload = function () {
         boole = true;
       }
     }
-    if (boole) alert('fields are required');
+    if (boole) modalApply('fields are required');
     for (var i = 0; i < input.length; i++) {
       if (input[i].value !== '') {
-        span[i].textContent !== 'valid' ? alert(span[i].textContent) : count++;
+        if (span[i].textContent !== 'valid')
+          error = error + '\n' + span[i].textContent;
+        else count++;
       }
     }
+    modalApply(error);
     if (count === span.length) {
-      fetch(`${url}/login?${query}`)
+      fetch(`${url}/login?${query}`, {
+        method: 'GET',
+      })
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          if (data.success) success(data);
-          else failure(data);
+          console.log(data);
+          if (data.success) modalApply(`Successful login: ${data.msg}`);
+          else modalApply(`${data.msg}`);
         })
         .catch(function (error) {
           throw new Error('Login error: ' + error);
