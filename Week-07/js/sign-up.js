@@ -14,6 +14,9 @@ window.onload = function () {
   var submit = document.querySelector('button[type="submit"]');
   var span = document.getElementsByTagName('span');
   var input = document.getElementsByTagName('input');
+  var modal = document.getElementById('myModal');
+  var accept = document.getElementsByClassName('btn-accept')[0];
+  var modalText = document.getElementsByClassName('modalText')[0];
   var emailExpression = new RegExp(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/);
 
   submit.addEventListener('click', handleSubmit);
@@ -29,6 +32,30 @@ window.onload = function () {
   password.addEventListener('blur', verifyPass);
   repassword.addEventListener('blur', verifyRePass);
 
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.remove('modal-block');
+      modal.classList.add('modal-none');
+    }
+  };
+
+  accept.onclick = function () {
+    modal.classList.remove('modal-block');
+    modal.classList.add('modal-none');
+  };
+
+  function modalApply(msg, color) {
+    modal.classList.add('modal-block');
+    if (color === 'red') {
+      modalText.classList.add('red');
+      modalText.classList.remove('blue');
+    } else {
+      modalText.classList.add('blue');
+      modalText.classList.remove('red');
+    }
+    modalText.textContent = msg;
+  }
+
   if (localStorage.getItem('name') !== '') {
     for (var i = 0; i < input.length; i++) {
       input[i].value = localStorage.getItem(input[i].name);
@@ -36,18 +63,17 @@ window.onload = function () {
   }
 
   function success(data) {
-    alert(`Successful register: ${data.msg}`);
+    modalApply(`Successful register: ${data.msg}`, 'blue');
     for (var i = 0; i < input.length; i++) {
       localStorage.setItem(input[i].name, input[i].value);
     }
   }
   function failure(data) {
-    console.log(data.errors[0].param);
     var error = '';
     for (var i = 0; i < data.errors.length; i++) {
       error = error + data.errors[i].param + ': ' + data.errors[i].msg + ' ';
     }
-    alert(error);
+    modalApply(error, 'red');
   }
   function errorApply(error, target, span) {
     span.classList.remove('span-none');
@@ -398,7 +424,7 @@ window.onload = function () {
         boole = true;
       }
     }
-    if (boole) alert('fields are required');
+    if (boole) return modalApply('fields are required', 'red');
     var errorStr = '';
     for (var i = 0; i < input.length; i++) {
       if (input[i].value !== '') {
@@ -410,8 +436,7 @@ window.onload = function () {
         } else count++;
       }
     }
-    console.log(count);
-    if (errorStr) alert(errorStr);
+    if (errorStr) modalApply(errorStr, 'red');
     if (count === input.length) {
       var date = input[3].value;
       var dateEl = date.split('-');
@@ -424,7 +449,7 @@ window.onload = function () {
         else query = query + `${input[i].name}=${formattedDate}&`;
       }
 
-      fetch(`${url}/signup?${query}`)
+      fetch(`${url}/signup?${query}`, { method: 'GET' })
         .then(function (response) {
           return response.json();
         })

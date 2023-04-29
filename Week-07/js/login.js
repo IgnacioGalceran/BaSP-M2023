@@ -25,13 +25,19 @@ window.onload = function () {
     modal.classList.add('modal-none');
   };
 
-  function modalApply(msg) {
-    modal.classList.add('modal-block');
+  function modalApply(msg, color) {
     modalText.textContent = msg;
+    if (color === 'red') {
+      modalText.classList.add('red');
+      modalText.classList.remove('blue');
+    } else {
+      modalText.classList.add('blue');
+      modalText.classList.remove('red');
+    }
+    modal.classList.add('modal-block');
   }
 
   function errorApply(error, target, span) {
-    console.log(span);
     span.textContent = error;
     span.classList.remove('span-none');
     span.classList.add('span-visible');
@@ -137,26 +143,23 @@ window.onload = function () {
         boole = true;
       }
     }
-    if (boole) modalApply('fields are required');
+    if (boole) return modalApply('fields are required', 'red');
     for (var i = 0; i < input.length; i++) {
       if (input[i].value !== '') {
         if (span[i].textContent !== 'valid')
-          error = error + '\n' + span[i].textContent;
+          error = `${error}\n${span[i].textContent}`;
         else count++;
       }
     }
-    modalApply(error);
+    modalApply(error, 'red');
     if (count === span.length) {
-      fetch(`${url}/login?${query}`, {
-        method: 'GET',
-      })
+      fetch(`${url}/login?${query}`, { method: 'GET' })
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data);
-          if (data.success) modalApply(`Successful login: ${data.msg}`);
-          else modalApply(`${data.msg}`);
+          if (data.success) modalApply(`Successful login: ${data.msg}`, 'blue');
+          else modalApply(`${data.msg}`, 'red');
         })
         .catch(function (error) {
           throw new Error('Login error: ' + error);

@@ -108,7 +108,6 @@ window.onload = function () {
   }
   function verifyMessage(event) {
     var value = event.target.value;
-    console.log(value.length);
     if (!(value.length !== 0 && value.length > 2)) {
       errorApply(
         'Alphanumeric, at least 3 characters',

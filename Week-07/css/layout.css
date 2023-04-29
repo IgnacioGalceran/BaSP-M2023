@@ -33,7 +33,9 @@ h2 {
 }
 
 .modal-block {
-  display: block; /* Hidden by default */
+  display: flex; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -45,15 +47,22 @@ h2 {
   background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
 }
 
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .modal-content {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  top: 30%;
   width: 80%; /* Could be more or less, depending on screen size */
-  height: 16%;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -77,12 +86,19 @@ h2 {
   width: fit-content;
   align-self: flex-start;
   font-weight: 600;
-  color: #373867;
 }
 
 .modal-content div {
   display: flex;
   align-self: flex-end;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: #373867;
 }
 
 .close:hover,
@@ -97,7 +113,10 @@ h2 {
   .signup-content {
     width: 60%;
   }
+  .modal-container {
+    width: 70%;
+  }
   .modal-content {
-    width: 40%;
+    width: 50%;
   }
 }
