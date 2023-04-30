@@ -69,11 +69,7 @@ window.onload = function () {
     }
   }
   function failure(data) {
-    var error = '';
-    for (var i = 0; i < data.errors.length; i++) {
-      error = error + data.errors[i].param + ': ' + data.errors[i].msg + ' ';
-    }
-    modalApply(error, 'red');
+    modalApply(data, 'red');
   }
   function errorApply(error, target, span) {
     span.classList.remove('span-none');
@@ -234,7 +230,7 @@ window.onload = function () {
         if (value[i] === ' ') boolSpace = true;
       }
       if (boolLetter && boolNum && boolSpace) {
-        if (blankSpaces(value, 1)) {
+        if (blankSpaces(value, 2)) {
           validApply(event.target, event.target.nextElementSibling);
           return true;
         } else {
@@ -455,10 +451,16 @@ window.onload = function () {
         })
         .then(function (data) {
           if (data.success) success(data);
-          else failure(data);
+          else {
+            var error = '';
+            for (var i = 0; i < data.errors.length; i++) {
+              error = error + ' ' + JSON.stringify(data.errors[i].msg);
+            }
+            throw new Error(error);
+          }
         })
         .catch(function (error) {
-          throw new Error('Register error: ' + error);
+          failure(error);
         });
     }
   }

@@ -151,7 +151,7 @@ window.onload = function () {
         else count++;
       }
     }
-    modalApply(error, 'red');
+    if (error) modalApply(error, 'red');
     if (count === span.length) {
       fetch(`${url}/login?${query}`, { method: 'GET' })
         .then(function (response) {
@@ -159,10 +159,10 @@ window.onload = function () {
         })
         .then(function (data) {
           if (data.success) modalApply(`Successful login: ${data.msg}`, 'blue');
-          else modalApply(`${data.msg}`, 'red');
+          else throw new Error(data.msg);
         })
         .catch(function (error) {
-          throw new Error('Login error: ' + error);
+          modalApply(`${error}`, 'red');
         });
     }
   }
