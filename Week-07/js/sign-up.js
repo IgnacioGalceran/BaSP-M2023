@@ -15,7 +15,7 @@ window.onload = function () {
   var span = document.getElementsByTagName('span');
   var input = document.getElementsByTagName('input');
   var modal = document.getElementById('myModal');
-  var accept = document.getElementsByClassName('btn-accept')[0];
+  var close = document.getElementsByClassName('close');
   var modalText = document.getElementsByClassName('modalText')[0];
   var emailExpression = new RegExp(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/);
 
@@ -39,10 +39,12 @@ window.onload = function () {
     }
   };
 
-  accept.onclick = function () {
-    modal.classList.remove('modal-block');
-    modal.classList.add('modal-none');
-  };
+  for (var i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+      modal.classList.remove('modal-block');
+      modal.classList.add('modal-none');
+    };
+  }
 
   function modalApply(msg, color) {
     modal.classList.add('modal-block');
@@ -362,11 +364,22 @@ window.onload = function () {
     var countN = 0;
     if (value.length !== 0 && value.length >= 8) {
       for (var i = 0; i < value.length; i++) {
-        if (value[i] >= 'a' && value[i] <= 'z') countL++;
+        if (
+          (value[i] >= 'a' && value[i] <= 'z') ||
+          (value[i] >= 'A' && value[i] <= 'Z') ||
+          (value[i] >= '0' && value[i] <= '9')
+        ) {
+          if (value[i] >= 'a' && value[i] <= 'z') countL++;
 
-        if (value[i] >= 'A' && value[i] <= 'Z') countU++;
+          if (value[i] >= 'A' && value[i] <= 'Z') countU++;
 
-        if (value[i] >= '0' && value[i] <= '9') countN++;
+          if (value[i] >= '0' && value[i] <= '9') countN++;
+        } else
+          return errorApply(
+            'only letters and numbers',
+            event.target,
+            event.target.nextElementSibling
+          );
       }
       if (countL + countU > 7 && countL + countN + countU === value.length) {
         validApply(event.target, event.target.nextElementSibling);
@@ -427,7 +440,7 @@ window.onload = function () {
         if (localStorage.getItem(input[i].name) !== input[i].value) {
           if (span[i].textContent !== 'valid') {
             errorStr =
-              errorStr + ' ' + input[i].name + ': ' + span[i].textContent;
+              errorStr + '\n' + input[i].name + ': ' + span[i].textContent;
           } else count++;
         } else count++;
       }

@@ -6,7 +6,7 @@ window.onload = function () {
   var span = document.getElementsByTagName('span');
   var input = document.getElementsByTagName('input');
   var modal = document.getElementById('myModal');
-  var accept = document.getElementsByClassName('btn-accept')[0];
+  var close = document.getElementsByClassName('close');
   var modalText = document.getElementsByClassName('modalText')[0];
 
   input[0].addEventListener('blur', verifyEmail);
@@ -20,10 +20,12 @@ window.onload = function () {
     }
   };
 
-  accept.onclick = function () {
-    modal.classList.remove('modal-block');
-    modal.classList.add('modal-none');
-  };
+  for (var i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+      modal.classList.remove('modal-block');
+      modal.classList.add('modal-none');
+    };
+  }
 
   function modalApply(msg, color) {
     modalText.textContent = msg;
@@ -36,7 +38,6 @@ window.onload = function () {
     }
     modal.classList.add('modal-block');
   }
-
   function errorApply(error, target, span) {
     span.textContent = error;
     span.classList.remove('span-none');
@@ -44,7 +45,6 @@ window.onload = function () {
     target.classList.remove('input-valid');
     target.classList.add('input-error');
   }
-
   function validApply(target, span) {
     span.textContent = 'valid';
     span.classList.add('span-none');
@@ -52,7 +52,6 @@ window.onload = function () {
     target.classList.add('input-valid');
     target.classList.remove('input-error');
   }
-
   function blankSpaces(param, num) {
     var count = 0;
     //checks if white space isn't in 1st or last place
@@ -95,20 +94,33 @@ window.onload = function () {
     var countN = 0;
     if (value.length !== 0 && value.length >= 8) {
       for (var i = 0; i < value.length; i++) {
-        if (value[i] >= 'a' && value[i] <= 'z') countL++;
+        if (
+          (value[i] >= 'a' && value[i] <= 'z') ||
+          (value[i] >= 'A' && value[i] <= 'Z') ||
+          (value[i] >= '0' && value[i] <= '9')
+        ) {
+          if (value[i] >= 'a' && value[i] <= 'z') countL++;
 
-        if (value[i] >= 'A' && value[i] <= 'Z') countU++;
+          if (value[i] >= 'A' && value[i] <= 'Z') countU++;
 
-        if (value[i] >= '0' && value[i] <= '9') countN++;
+          if (value[i] >= '0' && value[i] <= '9') countN++;
+        } else
+          return errorApply(
+            'only letters and numbers',
+            event.target,
+            event.target.nextElementSibling
+          );
       }
-      if (countL + countU > 7 && countL + countN + countU === value.length)
+      if (countL + countU > 7 && countL + countN + countU === value.length) {
         validApply(event.target, event.target.nextElementSibling);
-      else
+        return true;
+      } else {
         errorApply(
           'alphanumeric, at least 8 letters',
           event.target,
           event.target.nextElementSibling
         );
+      }
     } else {
       errorApply(
         'password must contain at least 8 letters',
@@ -117,19 +129,16 @@ window.onload = function () {
       );
     }
   }
-
   email.addEventListener('focus', function (event) {
     errorDisable(event.target.nextElementSibling);
   });
   pass.addEventListener('focus', function (event) {
     errorDisable(event.target.nextElementSibling);
   });
-
   function errorDisable(span) {
     span.classList.remove('span-visible');
     span.classList.add('span-none');
   }
-
   function handleSubmit(event) {
     event.preventDefault();
     var count = 0;
