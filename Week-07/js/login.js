@@ -27,7 +27,7 @@ window.onload = function () {
     };
   }
 
-  if (localStorage.getItem('email') !== '') {
+  if (localStorage.getItem('email') !== null) {
     for (var i = 0; i < input.length; i++) {
       input[i].value = localStorage.getItem(input[i].name);
     }
@@ -178,10 +178,11 @@ window.onload = function () {
         })
         .then(function (data) {
           if (data.success) modalApply(`Successful login: ${data.msg}`, 'blue');
-          else throw new Error(data.msg);
+          else modalApply(`${data.msg}`, 'red');
         })
         .catch(function (error) {
           modalApply(`${error}`, 'red');
+          throw new Error(error);
         });
     }
   }

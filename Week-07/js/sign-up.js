@@ -58,7 +58,7 @@ window.onload = function () {
     modalText.textContent = msg;
   }
 
-  if (localStorage.getItem('name') !== '') {
+  if (localStorage.getItem('name') !== null) {
     for (var i = 0; i < input.length; i++) {
       input[i].value = localStorage.getItem(input[i].name);
     }
@@ -498,11 +498,12 @@ window.onload = function () {
             for (var i = 0; i < data.errors.length; i++) {
               error = error + ' ' + JSON.stringify(data.errors[i].msg);
             }
-            throw new Error(error);
+            failure(error);
           }
         })
         .catch(function (error) {
           failure(error);
+          throw new Error(error);
         });
     }
   }
