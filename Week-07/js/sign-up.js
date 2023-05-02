@@ -65,7 +65,17 @@ window.onload = function () {
   }
 
   function success(data) {
-    modalApply(`Successful register: ${data.msg}`, 'blue');
+    var message = '';
+    for (var i = 0; i < input.length; i++) {
+      message =
+        message +
+        ' ' +
+        Object.keys(data.data)[i] +
+        ': ' +
+        Object.values(data.data)[i];
+    }
+
+    modalApply(`¡${data.msg}! ${message}`, 'blue');
     for (var i = 0; i < input.length; i++) {
       localStorage.setItem(input[i].name, input[i].value);
     }
@@ -339,10 +349,10 @@ window.onload = function () {
     var value = event.target.value;
     var index = value.indexOf('@');
     var subEmail = value.substring(0, index);
-    if (value.length !== 0 && subEmail.length > 5 && blankSpaces(subEmail, 0)) {
+    if (value.length !== 0 && subEmail.length > 3 && blankSpaces(subEmail, 0)) {
       if (!emailExpression.test(value)) {
         errorApply(
-          'must contain at least 6 chars and no white spaces',
+          'must contain at least 4 chars and no white spaces',
           event.target,
           event.target.nextElementSibling
         );
@@ -351,7 +361,7 @@ window.onload = function () {
       }
     } else {
       errorApply(
-        'at least 6 chars before @, no white spaces',
+        'at least 4 chars before @, no white spaces',
         event.target,
         event.target.nextElementSibling
       );
@@ -362,40 +372,54 @@ window.onload = function () {
     var countL = 0;
     var countU = 0;
     var countN = 0;
-    if (value.length !== 0 && value.length >= 8) {
-      for (var i = 0; i < value.length; i++) {
-        if (
-          (value[i] >= 'a' && value[i] <= 'z') ||
-          (value[i] >= 'A' && value[i] <= 'Z') ||
-          (value[i] >= '0' && value[i] <= '9')
-        ) {
-          if (value[i] >= 'a' && value[i] <= 'z') countL++;
+    if (repassword.value !== '' && repassword.value === value) {
+      if (value.length !== 0 && value.length >= 8) {
+        for (var i = 0; i < value.length; i++) {
+          if (
+            (value[i] >= 'a' && value[i] <= 'z') ||
+            (value[i] >= 'A' && value[i] <= 'Z') ||
+            (value[i] >= '0' && value[i] <= '9')
+          ) {
+            if (value[i] >= 'a' && value[i] <= 'z') countL++;
 
-          if (value[i] >= 'A' && value[i] <= 'Z') countU++;
+            if (value[i] >= 'A' && value[i] <= 'Z') countU++;
 
-          if (value[i] >= '0' && value[i] <= '9') countN++;
-        } else
-          return errorApply(
-            'only letters and numbers',
+            if (value[i] >= '0' && value[i] <= '9') countN++;
+          } else
+            return errorApply(
+              'only letters and numbers',
+              event.target,
+              event.target.nextElementSibling
+            );
+        }
+        if (countL + countU > 7 && countL + countN + countU === value.length) {
+          validApply(event.target, event.target.nextElementSibling);
+          validApply(repassword, repassword.nextElementSibling);
+          return true;
+        } else {
+          errorApply(
+            'alphanumeric, at least 8 letters',
             event.target,
             event.target.nextElementSibling
           );
-      }
-      if (countL + countU > 7 && countL + countN + countU === value.length) {
-        validApply(event.target, event.target.nextElementSibling);
-        return true;
+        }
       } else {
         errorApply(
-          'alphanumeric, at least 8 letters',
+          'password must contain at least 8 letters',
           event.target,
           event.target.nextElementSibling
         );
       }
     } else {
       errorApply(
-        'password must contain at least 8 letters',
+        'passwords do not match',
         event.target,
         event.target.nextElementSibling
+      );
+      errorApply(
+        'passwords do not match',
+        repassword,
+        repassword.nextElementSibling
       );
     }
   }
@@ -408,9 +432,15 @@ window.onload = function () {
         event.target,
         event.target.nextElementSibling
       );
+      errorApply(
+        'password do not match',
+        password,
+        password.nextElementSibling
+      );
       return false;
     } else {
       validApply(event.target, event.target.nextElementSibling);
+      validApply(password, password.nextElementSibling);
       return true;
     }
   }
@@ -436,14 +466,15 @@ window.onload = function () {
     if (boole) return modalApply('fields are required', 'red');
     var errorStr = '';
     for (var i = 0; i < input.length; i++) {
-      if (input[i].value !== '') {
-        if (localStorage.getItem(input[i].name) !== input[i].value) {
-          if (span[i].textContent !== 'valid') {
-            errorStr =
-              errorStr + '\n' + input[i].name + ': ' + span[i].textContent;
-          } else count++;
+      if (
+        input[i].value !== '' &&
+        localStorage.getItem(input[i].name) !== input[i].value
+      ) {
+        if (span[i].textContent !== 'valid') {
+          errorStr =
+            errorStr + '\n' + input[i].name + ': ' + span[i].textContent;
         } else count++;
-      }
+      } else count++;
     }
     if (errorStr) modalApply(errorStr, 'red');
     if (count === input.length) {
@@ -451,13 +482,11 @@ window.onload = function () {
       var dateEl = date.split('-');
       var formattedDate = dateEl[1] + '/' + dateEl[2] + '/' + dateEl[0];
       var url = 'https://api-rest-server.vercel.app';
-
       var query = '';
       for (var i = 0; i < input.length; i++) {
         if (i !== 3) query = query + `${input[i].name}=${input[i].value}&`;
         else query = query + `${input[i].name}=${formattedDate}&`;
       }
-
       fetch(`${url}/signup?${query}`, { method: 'GET' })
         .then(function (response) {
           return response.json();

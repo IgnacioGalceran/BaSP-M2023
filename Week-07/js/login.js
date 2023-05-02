@@ -27,6 +27,12 @@ window.onload = function () {
     };
   }
 
+  if (localStorage.getItem('email') !== '') {
+    for (var i = 0; i < input.length; i++) {
+      input[i].value = localStorage.getItem(input[i].name);
+    }
+  }
+
   function modalApply(msg, color) {
     modalText.textContent = msg;
     if (color === 'red') {
@@ -142,7 +148,7 @@ window.onload = function () {
   function handleSubmit(event) {
     event.preventDefault();
     var count = 0;
-    var error = '';
+    var errorStr = '';
     var url = 'https://api-rest-server.vercel.app';
     var query = `email=${email.value}&password=${pass.value}`;
     for (var i = 0; i < input.length; i++) {
@@ -155,12 +161,16 @@ window.onload = function () {
     if (boole) return modalApply('fields are required', 'red');
     for (var i = 0; i < input.length; i++) {
       if (input[i].value !== '') {
-        if (span[i].textContent !== 'valid')
-          error = `${error}\n${span[i].textContent}`;
-        else count++;
+        if (localStorage.getItem(input[i].name) !== input[i].value) {
+          if (span[i].textContent !== 'valid') {
+            errorStr =
+              errorStr + '\n' + input[i].name + ': ' + span[i].textContent;
+          } else count++;
+        } else count++;
       }
     }
-    if (error) modalApply(error, 'red');
+
+    if (errorStr) modalApply(errorStr, 'red');
     if (count === span.length) {
       fetch(`${url}/login?${query}`, { method: 'GET' })
         .then(function (response) {
